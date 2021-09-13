@@ -1,7 +1,7 @@
-// @jsx jsx
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import NextApp from 'next/app';
 import Head from 'next/head';
-import * as React from 'react';
 import { jsx, Container, Flex, ThemeProvider } from 'theme-ui';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
