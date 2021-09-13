@@ -1,4 +1,5 @@
-//@jsx jsx
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import NextImage from 'next/image';
 import { jsx, Box, Text } from 'theme-ui';
 

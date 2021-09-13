@@ -1,4 +1,5 @@
-//@jsx jsx
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import NextLink from 'next/link';
 import { jsx, Box, Container, Grid, Link, SxProp, Text } from 'theme-ui';
 
