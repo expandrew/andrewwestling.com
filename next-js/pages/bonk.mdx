@@ -1,0 +1,119 @@
+import NextLink from 'next/link';
+import { Link, Message, Text } from 'theme-ui';
+import { Meta } from '../components/Meta';
+
+<Meta title={'Bonk'} date={'2021-02-21'} />
+
+# Bonk
+
+<Message>
+  <Text as="p">
+    This page is about a custom TypeScript events library I wrote to control
+    devices in Media Cube.
+  </Text>
+  <Text as="p" sx={{ marginTop: 3 }}>
+    To read more about Media Cube, go to the{' '}
+    <NextLink href="/media-cube" passHref>
+      <Link>Media Cube project page</Link>
+    </NextLink>
+    .
+  </Text>
+</Message>
+
+## Table of Contents
+
+## Overview
+
+Bonk is a custom library to map events on assorted devices in Media Cube.
+
+- Written in TypeScript
+- Intended to run on Raspbian, on Raspberry Pi 3B+
+- Takes inputs from devices like Griffin PowerMate and Senic Nuimo
+- Sends outputs to devices like Sonos
+- Can be extended to support more devices
+
+[View the code on GitHub](https://github.com/expandrew/media-cube/tree/main/bonk)
+
+## Structure
+
+The library is separated into devices, the index file, and the runtime configuration.
+
+From the start, it was important that devices be completely independent of each other because they all have different interfaces and purposes.
+
+For this reason, Bonk resembles an [Event Bus](http://www.rribbit.org/eventbus.html):
+
+> An Eventbus is a mechanism that allows different components to communicate with each other without knowing about each other. A component can send an Event to the Eventbus without knowing who will pick it up or how many others will pick it up. Components can also listen to Events on an Eventbus, without knowing who sent the Events. That way, components can communicate without depending on each other. Also, it is very easy to substitute a component. As long as the new component understands the Events that are being sent and received, the other components will never know.
+
+### Devices
+
+Devices are found in the [`src/devices/`](https://github.com/expandrew/media-cube/tree/main/bonk/src/devices) directory.
+
+Each device has at least:
+
+- a `device.ts` file with a class that represents the interface to the hardware
+- a `events.ts` file that includes all the possible events for this device
+
+Right now, the supported devices are:
+
+- [Griffin PowerMate](https://griffin.zendesk.com/hc/en-us/articles/206445584-PowerMate-USB) - [typedoc](https://github.com/expandrew/media-cube/blob/main/bonk/docs/classes/powermate_device.powermate.md)
+- [Senic Nuimo Control](https://www.indiegogo.com/projects/nuimo-the-world-s-most-magical-controller) - [typedoc](https://github.com/expandrew/media-cube/blob/main/bonk/docs/classes/nuimo_device.nuimo.md)
+- Sonos - [typedoc](https://github.com/expandrew/media-cube/blob/main/bonk/docs/classes/sonos_device.sonos.md)
+
+### Index File
+
+The [`src/index.ts`](https://github.com/expandrew/media-cube/blob/main/bonk/src/index.ts) file is where events are mapped to methods
+
+Right now, the general mapping is like this:
+
+- PowerMate input events call Sonos methods
+- Nuimo input events call Sonos methods
+- Sonos play/pause events turn the PowerMate LED on/off (i.e. turn on PowerMate LED when Sonos is playing)
+- Nuimo "discovery" mode causes the PowerMate LED to pulse (i.e. pulse PowerMate LED when connecting to Nuimo)
+
+**User-Generated Input Events**
+
+|                          | PowerMate               | Nuimo                 |
+| ------------------------ | ----------------------- | --------------------- |
+| press                    | Sonos `togglePlay()`    | Sonos `togglePlay()`  |
+| double press             | Sonos `next()`          | _(not supported)_     |
+| triple press             | Sonos Previous Track    | _(not supported)_     |
+| clockwise                | Sonos Volume Up         | Sonos Volume Up       |
+| counterclockwise         | Sonos Volume Down       | Sonos Volume Down     |
+| press + clockwise        | Sonos Group Volume Up   | Sonos Group Volume Up |
+| press + counterclockwise | Sonos Group Volume Down | Sonos Group Volume Up |
+| swipe right              | _(not supported)_       | Sonos `next()`        |
+| swipe left               | _(not supported)_       | Sonos Previous Track  |
+| long press               | Reconnect Nuimo         | _(not supported)_     |
+
+**LED Events**
+
+- Sonos `PLAYING` event causes PowerMate LED to turn on
+- Sonos `PAUSED` event causes PowerMate LED to turn off
+- Nuimo `DISCOVERY_STARTED` event causes PowerMate LED to start pulsing
+- Nuimo `DISCOVERY_FINISHED` event causes PowerMate LED to stop pulsing
+
+### Deployment
+
+I "deploy" this library with these steps:
+
+- Commit changes and push up to GitHub
+- Use SSH to connect to the Raspberry Pi
+- Pull the changes down to the Raspberry Pi
+- Run the build command on the Raspberry Pi
+- Start (or restart) the script with [`pm2`](https://pm2.keymetrics.io/), a process manager.
+
+The script runs continuously using pm2, and its configuration is in the [`pm2.config.json`](https://github.com/expandrew/media-cube/blob/main/bonk/pm2.config.json) file.
+
+Throughout the code, I use [`debug`](https://github.com/visionmedia/debug) to output to logs, which I can read through pm2.
+
+## Resources
+
+Bonk depends on, is derived from, or draws inspiration from the following libraries:
+
+- [mattwelch/sonospowermate](https://github.com/mattwelch/sonospowermate) (formerly used this, but outgrew it when I got a second Sonos speaker)
+- [svrooij/node-sonos-ts](https://github.com/svrooij/node-sonos-ts) (typed rewrite of `node-sonos` - currently a dependency for controlling Sonos)
+- [sandeepmistry/node-powermate](https://github.com/sandeepmistry/node-powermate) (derived some of my PowerMate logic from here)
+- [jishi/node-sonos-discovery](https://github.com/jishi/node-sonos-discovery) (for some hints about Sonos group logic)
+- [happycodelucky/rocket-nuimo-node](https://github.com/happycodelucky/rocket-nuimo-node) (for pretty much all things Nuimo; happy that there's an active and up-to-date (and TypeScript-ed!) library for Nuimo)
+- [Design Patterns: Event Bus](https://dzone.com/articles/design-patterns-event-bus)
+- [Node.js Events](https://nodejs.org/api/events.html)

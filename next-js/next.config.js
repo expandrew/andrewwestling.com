@@ -32,6 +32,10 @@ const autoLinkHeadingsOptions = {
   },
 };
 
+const tocOptions = {
+  tight: true,
+};
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -39,7 +43,7 @@ const withMDX = require('@next/mdx')({
       [collapse, { test: '' }],
       slug,
       [autolinkHeadings, autoLinkHeadingsOptions],
-      toc,
+      [toc, tocOptions],
     ],
   },
 });

@@ -125,6 +125,32 @@ const theme: Theme = {
         borderRadius: 'default',
         color: 'primary',
         padding: space[1],
+        fontFamily: 'monospace',
+        fontSize: fontSizes[0],
+      },
+      blockquote: {
+        backgroundColor: 'highlight',
+        borderRadius: 'default',
+        padding: [space[2], space[4]],
+        marginX: [space[2], space[4]],
+        p: {
+          variant: 'text.label',
+          margin: 0,
+        },
+      },
+      p: {
+        marginY: space[3],
+        color: 'inherit',
+      },
+      th: {
+        borderBottomColor: 'muted',
+        borderBottomStyle: 'solid',
+        borderBottomWidth: '1px',
+      },
+      td: {
+        borderBottomColor: 'highlight',
+        borderBottomStyle: 'solid',
+        borderBottomWidth: '1px',
       },
     },
     a: {
@@ -132,12 +158,6 @@ const theme: Theme = {
       '&:hover': {
         color: 'primary',
       },
-    },
-    p: {
-      variant: 'text.default',
-    },
-    li: {
-      variant: 'text.default',
     },
     footer: {
       backgroundColor: 'highlight',
