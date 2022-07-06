@@ -3,9 +3,9 @@
   "tasks": [
     {
       "command": "npm run dev",
-      "detail": "Start development",
+      "detail": "Start development for Next.js",
       "group": "build",
-      "label": "Start development for Next.js",
+      "label": "Start",
       "type": "shell",
       "options": {
         "cwd": "next-js/"
@@ -14,9 +14,9 @@
     },
     {
       "command": "npm install",
-      "detail": "Install",
+      "detail": "Install dependencies",
       "group": "build",
-      "label": "Install dependencies",
+      "label": "Install",
       "type": "shell",
       "options": {
         "cwd": "next-js/"
