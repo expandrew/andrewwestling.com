@@ -3,32 +3,43 @@
 import NextLink from 'next/link';
 import { jsx, Box, Container, Grid, Link, SxProp, Text } from 'theme-ui';
 
-const socialAccounts = {
-  github: {
-    username: 'expandrew',
-    url: 'https://github.com/expandrew',
-  },
-  instagram: {
+const socialAccounts = [
+  {
+    icon: 'instagram',
     username: 'expandrew',
     url: 'https://instagram.com/expandrew',
   },
-  linkedin: {
+  {
+    icon: 'instagram',
+    username: 'antiperformances',
+    url: 'https://instagram.com/antiperformances',
+  },
+  {
+    icon: 'github',
+    username: 'expandrew',
+    url: 'https://github.com/expandrew',
+  },
+  {
+    icon: 'linkedin',
     username: 'andrewwestling',
     url: 'https://linkedin.com/in/andrewwestling',
   },
-  twitter: {
+  {
+    icon: 'twitter',
     username: 'andwest',
     url: 'https://twitter.com/andwest',
   },
-  lastfm: {
+  {
+    icon: 'lastfm',
     username: 'andwest',
     url: 'https://last.fm/user/andwest',
   },
-  spotify: {
+  {
+    icon: 'spotify',
     username: '1283883',
     url: 'https://open.spotify.com/user/1283883',
   },
-};
+];
 
 export const Footer = (props: { sx?: SxProp }) => {
   return (
@@ -57,7 +68,7 @@ export const Footer = (props: { sx?: SxProp }) => {
           <Box>
             {Object.keys(socialAccounts).map((account) => (
               <Link
-                key={account}
+                key={socialAccounts[account].url}
                 sx={{
                   display: 'flex',
                   flexDirection: 'row',
@@ -67,7 +78,7 @@ export const Footer = (props: { sx?: SxProp }) => {
               >
                 <svg width={16} height={16} fill={'currentColor'}>
                   <use
-                    xlinkHref={`/assets/minima-social-icons.svg#${account}`}
+                    xlinkHref={`/assets/minima-social-icons.svg#${socialAccounts[account].icon}`}
                   ></use>
                 </svg>
                 <Text variant="footer" sx={{ marginLeft: 2 }}>

@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "command": "npm run dev",
+      "detail": "Start development for Next.js",
+      "group": "build",
+      "label": "Start",
+      "type": "shell",
+      "options": {
+        "cwd": "next-js/"
+      },
+      "problemMatcher": ["$tsc-watch"]
+    },
+    {
+      "command": "npm install",
+      "detail": "Install dependencies",
+      "group": "build",
+      "label": "Install",
+      "type": "shell",
+      "options": {
+        "cwd": "next-js/"
+      },
+      "problemMatcher": ["$tsc-watch"]
+    }
+  ]
+}
