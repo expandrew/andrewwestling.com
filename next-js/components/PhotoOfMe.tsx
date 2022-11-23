@@ -16,6 +16,7 @@ export const PhotoOfMe = () => {
       >
         {hover && (
           <NextImage
+            priority={true}
             width={500}
             height={500}
             sx={{ borderRadius: 'large' }}
