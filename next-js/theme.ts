@@ -177,6 +177,24 @@ const theme: Theme = {
       paddingX: space[3],
     },
   },
+  buttons: {
+    primary: {
+      '&:hover': {
+        color: 'text',
+        cursor: 'pointer',
+      },
+    },
+    small: {
+      fontSize: [0],
+      color: 'muted',
+      bg: 'highlight',
+      '&:hover': {
+        color: 'highlight',
+        bg: 'muted',
+        cursor: 'pointer',
+      },
+    },
+  },
 };
 
 export default theme;
