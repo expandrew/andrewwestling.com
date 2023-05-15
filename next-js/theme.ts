@@ -21,6 +21,7 @@ const space = [
 
 const theme: Theme = {
   useColorSchemeMediaQuery: true,
+  printColorModeName: 'light',
   useLocalStorage: false,
   breakpoints: ['40rem'],
   fonts: {
@@ -48,6 +49,12 @@ const theme: Theme = {
     tertiary: '#b8c05d',
     accent: '#fcbb1a',
     modes: {
+      light: {
+        text: '#050708',
+        background: '#ffffff',
+        muted: '#666666',
+        highlight: '#efefef',
+      },
       dark: {
         text: '#dddddd',
         background: '#050708',
