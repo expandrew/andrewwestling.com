@@ -15,8 +15,8 @@ const space = [
   '0.500rem',
   '1.000rem',
   '2.000rem',
-  '4.000rem',
-  '8.000rem',
+  '3.000rem',
+  '5.000rem',
 ];
 
 const theme: Theme = {
@@ -98,6 +98,13 @@ const theme: Theme = {
       h3: {
         variant: 'text.heading',
         fontSize: [fontSizes[2], fontSizes[3]],
+      },
+      // Special margins for the headings on items in "Experience" section on Resume
+      '#experienceContainer > h3:not(:first-child)': {
+        marginTop: [space[5]],
+      },
+      '#experienceContainer > h3': {
+        marginBottom: [space[1]],
       },
       h4: {
         variant: 'text.heading',

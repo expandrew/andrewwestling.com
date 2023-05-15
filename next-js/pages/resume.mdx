@@ -2,7 +2,15 @@ import { Message, Text } from 'theme-ui';
 import { Greeting } from '../components/Greeting';
 import { Meta } from '../components/Meta';
 
-export const date = '2023-03-30';
+export const date = '2023-05-15';
+
+export const year = new Date().getFullYear();
+export const yoe = year - 2014;
+
+export const DatesAndLocation = ({ children }) => {
+  // For more control over margins on the italic "dates and location" line below position names
+  return <Text sx={{ fontStyle: 'italic' }}>{children}</Text>;
+};
 
 <Meta title={'Resume'} date={date} />
 
@@ -11,84 +19,113 @@ export const date = '2023-03-30';
 <Message>
   <Text as="p">
     I'm a designer-turned-engineer. I was going to be an architect, but then I
-    got distracted by the web.
+    got distracted by the web. For the last {yoe} years, I've been working as a{' '}
+    <strong>front end engineer</strong>.
   </Text>
   <Text as="p" sx={{ marginTop: 3 }}>
-    These days, I build web apps. My favorite things to work on are design
-    systems, and front end features for TypeScript and JavaScript applications.
-    I'm handy with the usual infrastructure and build tools. I also like to
-    think about how processes scale, and how teams can work together more
+    These days, I build web apps. My favorite things to work on are{' '}
+    <strong>design systems</strong>, and front end features for{' '}
+    <strong>TypeScript and JavaScript</strong> applications. I'm handy with{' '}
+    <strong>React</strong>, <strong>Next.js</strong>, and{' '}
+    <strong>Tailwind</strong>, among many other tools. I also like to think
+    about how processes scale, and how teams can work together more
     harmoniously.
   </Text>
 </Message>
 
 ## Experience
 
+<div id="experienceContainer">
+{/* #experienceContainer is for applying the heading spacing */}
+
 ### **[Forte](https://fortelessons.com)**, Senior Software Engineer
 
-_July 2022–March 2023, remote (New York City)_
+<DatesAndLocation>
+  July 2022–March 2023, remote (New York City)
+</DatesAndLocation>
 
-First engineering hire. Feature development, setting up tools and culture. Forte is a purpose-built music education tool for teachers and students.
+First engineering hire. Feature development, setting up tools and culture. Forte is a purpose-built music education platform for teachers and students.
+
+- **From scratch**: I set up Forte's Next.js application from scratch; I chose tools and workflows to set us up for quick iteration; established a component library to keep things consistent
+- **Built features**: I built the first iteration of various customer-facing features for Forte's marketplace: Teacher Profiles; Certified Institutions; Invitations and Sign Up; Teacher Ratings and Reviews; "Switch Role" functionality; etc.
+- **UX/Product Architecture**: I got to inform the UX, product flow, and overall architecture of a multi-role marketplace application
+- **Migration**: We migrated to Next.js from a prior AWS Amplify application
+
+Tools we used: React, TypeScript, Next.js, GraphQL, Prisma, Tailwind, Flowbite, Ladle, Vercel
 
 ### **[Monograph](https://monograph.com)**, Senior Front End Engineer
 
-_April 2021–June 2022, remote (New York City)_
+<DatesAndLocation>
+  April 2021–June 2022, remote (New York City)
+</DatesAndLocation>
 
 Design system and feature development for Monograph's applications. Monograph makes tools to help architecture firms manage their projects, budgets, and tasks.
 
-- Design system development; documentation and workflows for the team between Figma and the Monograph component library _(React, TypeScript, Stitches, Figma, Storybook)_
-- Built assorted customer-facing features (Team Directory, filter functionality for Monograph Resource, Settings UI) _(React, TypeScript, Rails, GraphQL)_
-- A lot of hard-to-quantify "glue" work (process documentation, choosing tools, configuration, reviews, data migration scripts, customer support collaboration, bug triaging, etc.)
+- **Design systems**: I built components for Monograph's component library; also wrote documentation and set up workflows between Figma and the codebase
+- **Features**: I built assorted customer-facing features: Team Directory; filter functionality for Monograph Resource; Settings UI; etc.
+- **["Glue" work](https://noidea.dog/glue)**: A lot of hard-to-quantify things like process documentation, choosing tools, configuration, code reviews, data migration scripts, customer support collaboration, bug triaging, etc.
 
-Laid off in June 2022 🥲
+Tools we used: React, TypeScript, Stitches, Figma, Storybook, GraphQL, Rails, Vercel, Heroku, Linear
 
 ### **[Better.com](https://better.com)**, Software Engineer
 
-_July 2018–April 2021, New York City_
+<DatesAndLocation>July 2018–April 2021, New York City</DatesAndLocation>
 
 Design system and feature development for Better's loan origination platform. Better.com is a mortgage lender.
 
-- Founding member of Better's Design Systems team; built libraries to empower our engineering teams to build consistent and clean UIs _(React, TypeScript, Theme UI, Storybook)_
-- Built assorted borrower-facing features (redisclosure service; "required assets and buffer" logic; authentication/session expiration; UX for uploading a competitor's loan estimate; loan overview page; etc.) _(Ember, SCSS)_
-- Built integrations with sales and marketing tools (call scheduling, A/B testing, etc.) _(Ember, Optimizely, Segment)_
+- **Design systems**: I was one of the first members of Better's Design Systems team; we built libraries to empower our engineering teams to build consistent and clean UIs
+- **Features**: I built assorted borrower-facing features: redisclosure service; "required assets and buffer" logic; authentication/session expiration; UX for uploading a competitor's loan estimate; loan overview page; etc.
+- **Integrations**: I worked on integrations with sales and marketing tools (call scheduling, A/B testing, etc.)
+
+Tools we used: React, TypeScript, Theme UI, Storybook, Ember, Node.js, SCSS, Optimizely, Segment
 
 ### **[Architizer](https://architizer.com)**, Software Engineer
 
-_September 2015–June 2018, New York City_
+<DatesAndLocation>September 2015–June 2018, New York City</DatesAndLocation>
 
 Full-stack and front end feature development and infrastructure maintenance for Architizer’s platform to help architects find building products.
 
-- Established and maintained a UI component system to speed up feature development, and improve collaboration with designers _(React, Next.js, Storybook, styled-components, SCSS)_
-- Built large features, including a private messaging interface, and directory interfaces to Solr search indexes _(AngularJS, SCSS, Django, Solr, Haystack)_
-- Extended integrations with external tools for analytics, error logging, marketing, and customer support _(Segment)_
-- Optimized frontend infrastructure to speed up deployment and improve test coverage _(Node.js, CircleCI, AWS, Docker, gulp)_
-- Cleaned up infrastructure, pruned AWS resources to reduce costs, and refactored stale application code
+- **Component libraries**: I established and maintained a UI component system to speed up feature development, and improve collaboration with designers
+- **Features**: I built internal- and external-facing features: a private messaging interface; directory interfaces to Solr search indexes; etc.
+- **Integrations**: Extended integrations with external tools for analytics, error logging, marketing, and customer support
+- **Infrastructure**: Optimized frontend infrastructure to speed up deployment and improve test coverage
+- **Tech debt**: Pruned AWS resources to reduce costs, and refactored stale application code
+
+Primary Tools: React, Next.js, Storybook, styled-components, AngularJS, SCSS, Django, Solr, Segment, Node.js, CircleCI, AWS, Docker, gulp
 
 ### **[EyeCue Lab](https://eyecuelab.com)**, Software Engineer
 
-_October 2014–August 2015, Portland, Oregon_
+<DatesAndLocation>October 2014–August 2015, Portland, Oregon</DatesAndLocation>
 
 Internship-to-hire. Consultancy/agency setting. Built marketing pages and full-stack features for web applications and client projects.
 
 ### **[Epicodus](https://epicodus.com)**
 
-_July 2014–October 2014, Portland, Oregon_
+<DatesAndLocation>July 2014–October 2014, Portland, Oregon</DatesAndLocation>
 
-Code school. Learned Ruby on Rails, JavaScript, and other tools. Attained internship-to-hire with EyeCue Lab after Epicodus
+Code school. Learned Ruby on Rails, JavaScript, and other tools. Attained internship-to-hire with EyeCue Lab after Epicodus.
 
 ### **[Apple](https://apple.com)**, AppleCare Advisor
 
-_June 2013–May 2014, remote_
+<DatesAndLocation>June 2013–May 2014, remote (Eugene, Oregon)</DatesAndLocation>
 
-Tier I technical phone support and customer service for macOS products while completing my degree.
+Technical phone support and customer service for macOS products while I completed my degree.
+
+</div>
+
+<hr style={{ 'margin-top': '2rem' }} />
 
 ## Tools I use
+
+I have experience with (and would be happy to work with) the following tools:
 
 **JS/TS**: TypeScript, React, Next.js, GraphQL, Apollo, Prisma, Jest, Ember.js, Node.js, AngularJS, webpack
 
 **UI**: Tailwind, Flowbite, Ladle, Storybook, Stitches, Radix, Theme UI, styled-components, MDX, SCSS, Tachyons
 
-**General**: Vercel, Heroku, Rails, nginx, Docker, AWS, Segment, CircleCI, Django, Visual Studio Code
+**General**: Vercel, Heroku, Rails, nginx, Docker, AWS, Segment, CircleCI, Django, Visual Studio Code, GitHub, Linear
+
+<hr style={{ 'margin-top': '2rem' }} />
 
 ## Education
 
