@@ -1,5 +1,14 @@
 import NextLink from 'next/link';
-import { Box, Grid, Heading, Link, Message, Text, useThemeUI } from 'theme-ui';
+import {
+  Box,
+  Button,
+  Grid,
+  Heading,
+  Link,
+  Message,
+  Text,
+  useThemeUI,
+} from 'theme-ui';
 import { DarkModeToggle } from '../components/DarkModeToggle';
 import { Footer } from '../components/Footer';
 import { Greeting } from '../components/Greeting';
@@ -198,4 +207,17 @@ This is the photo of me on the index page, and the caption/attribution.
 
 <ComponentWrapper>
   <PhotoOfMe />
+</ComponentWrapper>
+
+---
+
+## Buttons
+
+These are buttons, for use wherever a button is needed.
+
+<ComponentWrapper>
+  <Grid sx={{ gap: '1rem' }}>
+    <Button>Primary button</Button>
+    <Button variant="small">Small button</Button>
+  </Grid>
 </ComponentWrapper>

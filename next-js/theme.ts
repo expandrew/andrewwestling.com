@@ -15,12 +15,13 @@ const space = [
   '0.500rem',
   '1.000rem',
   '2.000rem',
-  '4.000rem',
-  '8.000rem',
+  '3.000rem',
+  '5.000rem',
 ];
 
 const theme: Theme = {
   useColorSchemeMediaQuery: true,
+  printColorModeName: 'light',
   useLocalStorage: false,
   breakpoints: ['40rem'],
   fonts: {
@@ -48,6 +49,12 @@ const theme: Theme = {
     tertiary: '#b8c05d',
     accent: '#fcbb1a',
     modes: {
+      light: {
+        text: '#050708',
+        background: '#ffffff',
+        muted: '#666666',
+        highlight: '#efefef',
+      },
       dark: {
         text: '#dddddd',
         background: '#050708',
@@ -98,6 +105,13 @@ const theme: Theme = {
       h3: {
         variant: 'text.heading',
         fontSize: [fontSizes[2], fontSizes[3]],
+      },
+      // Special margins for the headings on items in "Experience" section on Resume
+      '#experienceContainer > h3:not(:first-child)': {
+        marginTop: [space[5]],
+      },
+      '#experienceContainer > h3': {
+        marginBottom: [space[1]],
       },
       h4: {
         variant: 'text.heading',
@@ -161,6 +175,24 @@ const theme: Theme = {
   layout: {
     container: {
       paddingX: space[3],
+    },
+  },
+  buttons: {
+    primary: {
+      '&:hover': {
+        color: 'text',
+        cursor: 'pointer',
+      },
+    },
+    small: {
+      fontSize: [0],
+      color: 'muted',
+      bg: 'highlight',
+      '&:hover': {
+        color: 'highlight',
+        bg: 'muted',
+        cursor: 'pointer',
+      },
     },
   },
 };

@@ -37,7 +37,7 @@ export const Header = (props: { sx?: SxProp }) => (
             </Link>
           </NextLink>
         </Box>
-        <Box>
+        <Box className="no-print">
           <DarkModeToggle />
         </Box>
       </Flex>

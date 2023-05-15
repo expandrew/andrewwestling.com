@@ -6,6 +6,7 @@ import { jsx, Container, Flex, ThemeProvider } from 'theme-ui';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import theme from '../theme';
+import '../print.css';
 
 declare const window: any;
 const goatCount = () => {
