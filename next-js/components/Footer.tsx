@@ -43,7 +43,7 @@ const socialAccounts = [
 
 export const Footer = (props: { sx?: SxProp }) => {
   return (
-    <footer sx={{ variant: 'styles.footer', ...props.sx }}>
+    <footer className="no-print" sx={{ variant: 'styles.footer', ...props.sx }}>
       <Container>
         <Grid columns={['1fr', '1fr 1fr 1fr']} gap={2}>
           <Box sx={{ marginBottom: 3 }}>
