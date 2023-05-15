@@ -1,4 +1,4 @@
-import { Message, Text } from 'theme-ui';
+import { Message, Text, Button } from 'theme-ui';
 import { Greeting } from '../components/Greeting';
 import { Meta } from '../components/Meta';
 
@@ -10,6 +10,21 @@ export const yoe = year - 2014;
 export const DatesAndLocation = ({ children }) => {
   // For more control over margins on the italic "dates and location" line below position names
   return <Text sx={{ fontStyle: 'italic' }}>{children}</Text>;
+};
+
+export const DownloadAsPDF = () => {
+  return (
+    <div className="no-print">
+      <Button
+        as="a"
+        href="/assets/Andrew Westling Resume.pdf"
+        variant="small"
+        target="_blank"
+      >
+        📃 Download as PDF
+      </Button>
+    </div>
+  );
 };
 
 <Meta title={'Resume'} date={date} />
@@ -136,3 +151,5 @@ Bachelor of Architecture (B.Arch), University of Oregon, 2014
 <Text as="p" variant="label">
   Last updated: {date}
 </Text>
+
+<DownloadAsPDF />
