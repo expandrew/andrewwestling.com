@@ -25,11 +25,6 @@ const socialAccounts = [
     url: 'https://linkedin.com/in/andrewwestling',
   },
   {
-    icon: 'twitter',
-    username: 'andwest',
-    url: 'https://twitter.com/andwest',
-  },
-  {
     icon: 'lastfm',
     username: 'andwest',
     url: 'https://last.fm/user/andwest',
