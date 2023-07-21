@@ -71,7 +71,7 @@ export const Footer = (props: { sx?: SxProp }) => {
                 }}
                 href={socialAccounts[account].url}
               >
-                <svg width={16} height={16} fill={'currentColor'}>
+                <svg width={20} height={20} fill={'currentColor'}>
                   <use
                     xlinkHref={`/assets/minima-social-icons.svg#${socialAccounts[account].icon}`}
                   ></use>
