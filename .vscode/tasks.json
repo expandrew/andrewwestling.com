@@ -22,6 +22,17 @@
         "cwd": "next-js/"
       },
       "problemMatcher": ["$tsc-watch"]
+    },
+    {
+      "command": "resume export --theme ./jsonresume-theme-andrewwestling ../next-js/components/resume.html && resume export --theme ./jsonresume-theme-andrewwestling ../next-js/public/assets/'Andrew Westling Resume'.pdf",
+      "detail": "Generate HTML resume and put it in public folder",
+      "label": "Resume: Regenerate HTML and PDF",
+      "type": "shell",
+      "options": {
+        "cwd": "resume/"
+      },
+      "group": "none",
+      "problemMatcher": []
     }
   ]
 }
