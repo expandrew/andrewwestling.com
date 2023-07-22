@@ -22,14 +22,13 @@
 
   .side {
     vertical-align: middle;
-    padding-left: 0;
     padding-top: 15px;
 
     .contact {
       list-style-type: none;
 
       li {
-        font-size: $font-size-large;
+        font-size: $font-size-medium;
         line-height: $line-height-3;
       }
     }

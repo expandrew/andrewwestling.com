@@ -1,22 +1,20 @@
 {
-  "name": "jsonresume-theme-actual",
+  "name": "jsonresume-theme-andrewwestling",
   "main": "index.js",
   "files": [
     "/assets",
     "index.js"
   ],
   "version": "0.2.1",
-  "description": "Actual theme for JSON Resume",
-  "author": "David Carvajal",
+  "description": "Andrew Westling theme for JSON Resume (derived from Actual theme)",
+  "author": "Andrew Westling via David Carvajal",
   "repository": {
     "type": "git",
     "url": "https://github.com/davcd/jsonresume-theme-actual"
   },
   "scripts": {
-    "create-html": "resume export public/resume.html --format html --theme .",
-    "create-pdf": "resume export public/resume.pdf --format pdf --theme .",
-    "create-docs": "resume export docs/resume_extended.pdf --resume public/resume_extended.json --format pdf --theme . && resume export docs/resume_simple.pdf --resume public/resume_simple.json --format pdf --theme .",
-    "validate": "resume test",
+    "create-html": "resume export public/resume.html --format html --theme . --resume ../resume.json",
+    "create-pdf": "resume export public/resume.pdf --format pdf --theme . --resume ../resume.json",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "gulp": "gulp",

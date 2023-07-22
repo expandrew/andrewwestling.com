@@ -14,7 +14,7 @@ function css () {
 }
 
 function html () {
-  const resume = JSON.parse(fs.readFileSync('./resume.json', 'utf-8'))
+  const resume = JSON.parse(fs.readFileSync('../resume.json', 'utf-8'))
 
   return src('./assets/template.pug')
     .pipe(pug({ data: { resume, helper } }))
@@ -32,7 +32,7 @@ function serve () {
   })
 
   watch('./assets/**/*.scss', series(css, html))
-  watch(['./assets/**/*.pug', './resume.json'], html)
+  watch(['./assets/**/*.pug', '../resume.json'], html)
   bs.watch('./public/*.html').on('change', bs.reload)
 }
 

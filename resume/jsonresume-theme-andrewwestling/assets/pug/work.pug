@@ -19,4 +19,5 @@ if helper.validArray(resume.work)
           if helper.validArray(work.highlights)
             ul(class='highlights margin-text-4 no-break')
               each highlight in work.highlights
-                li=highlight
+                li
+                  span!=helper.mdToHtml(highlight)
