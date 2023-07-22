@@ -54,4 +54,16 @@ module.exports = withMDX({
       },
     ];
   },
+  webpack: (config, { isServer }) => {
+    // Add html-loader rule for non-JS files (e.g., HTML)
+    config.module.rules.push({
+      test: /\.(html)$/,
+      use: {
+        loader: 'html-loader',
+      },
+    });
+
+    // Important: return the modified config
+    return config;
+  },
 });
