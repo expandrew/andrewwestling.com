@@ -1,0 +1,42 @@
+@use "sass:math";
+
+.main {
+  .highlights {
+    width: auto;
+    display: block;
+    padding: 0 $space-1;
+    margin-bottom: 0;
+
+    li {
+      font-size: $font-size-xsmall;
+      margin-left: $space-1;
+    }
+  }
+
+  .left {
+    display: table-cell;
+
+    .title {
+      font-size: $font-size-large;
+      font-weight: bold;
+      display: block;
+    }
+
+    .subtitle {
+      font-size: $font-size-medium;
+      font-weight: lighter;
+      display: block;
+    }
+  }
+
+  .right {
+    text-align: right;
+    display: table-cell;
+
+    .date {
+      font-size: $font-size-small;
+      font-weight: lighter;
+      white-space: nowrap;
+    }
+  }
+}

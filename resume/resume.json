@@ -1,0 +1,191 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Andrew Westling",
+    "label": "Software Engineer",
+    "image": "",
+    "email": "hi@andrewwestling.com",
+    "phone": "",
+    "url": "https://andrewwestling.com",
+    "summary": "I'm a designer-turned-engineer. I was going to be an architect, but then I got distracted by the web. These days, I build web apps. My favorite things to work on are **design systems**, and front end features for **TypeScript and JavaScript** applications. I'm handy with **React**, **Next.js**, and **Tailwind**, among many other tools. I also like to think about how processes scale, and how teams can work together more harmoniously.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Brooklyn",
+      "countryCode": "",
+      "region": "NY"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "andrewwestling",
+        "url": "https://linkedin.com/in/andrewwestling"
+      },
+      {
+        "network": "GitHub",
+        "username": "expandrew",
+        "url": "https://github.com/expandrew"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Forte",
+      "location": "remote (New York City)",
+      "description": "Online music education platform",
+      "position": "Senior Software Engineer",
+      "url": "https://fortelessons.com",
+      "startDate": "2022-07-11",
+      "endDate": "2023-03-31",
+      "summary": "Feature development, setting up tools and culture. I was the first engineering hire. Forte is a purpose-built music education platform for teachers and students.",
+      "highlights": [
+        "**From scratch**: I set up Forte's Next.js application from scratch; I chose tools and workflows to set us up for quick iteration; established a component library to keep things consistent",
+        "**Built features**: I built the first iteration of various customer-facing features for Forte's marketplace: Teacher Profiles; Certified Institutions; Invitations and Sign Up; Teacher Ratings and Reviews; \"Switch Role\" functionality; etc.",
+        "**UX/Product Architecture**: I got to inform the UX, product flow, and overall architecture of a multi-role marketplace application"
+      ]
+    },
+    {
+      "name": "Monograph",
+      "location": "remote (New York City)",
+      "description": "Practice management software for architecture firms",
+      "position": "Senior Front End Engineer",
+      "url": "https://monograph.com",
+      "startDate": "2021-04-11",
+      "endDate": "2022-06-10",
+      "summary": "Design system and feature development for Monograph's applications. Monograph makes tools to help architecture firms manage their projects, budgets, and tasks.",
+      "highlights": [
+        "**Design systems**: I built components for Monograph's component library; also wrote documentation and set up workflows between Figma and the codebase",
+        "**Features**: I built customer-facing features: Team Directory; filter functionality for Monograph Resource; Settings UI; etc.",
+        "**[\"Glue\" work](https://noidea.dog/glue)**; A lot of hard-to-quantify things like process documentation, choosing tools, configuration, code reviews, data migration scripts, customer support collaboration, bug triaging, etc."
+      ]
+    },
+    {
+      "name": "Better.com",
+      "location": "New York City",
+      "description": "Mortgage lender",
+      "position": "Software Engineer",
+      "url": "https://better.com",
+      "startDate": "2018-07-01",
+      "endDate": "2021-03-30",
+      "summary": "Design system and feature development for Better's loan origination platform. Better.com is a mortgage lender.",
+      "highlights": [
+        "**Design systems**: I was one of the first members of Better's Design Systems team; we built libraries to empower our engineering teams to build consistent and clean UIs",
+        "**Features**: I built assorted borrower-facing features: redisclosure service; \"required assets and buffer\" logic; authentication/session expiration; UX for uploading a competitor's loan estimate; loan overview page; etc.",
+        "**Integrations**: I worked on integrations with sales and marketing tools (call scheduling, A/B testing, etc.)"
+      ]
+    },
+    {
+      "name": "Architizer",
+      "location": "New York City",
+      "description": "Marketplace for architects to find products for buildings",
+      "position": "Software Engineer",
+      "url": "https://architizer.com",
+      "startDate": "2015-09-08",
+      "endDate": "2018-06-15",
+      "summary": "Full-stack and front end feature development and infrastructure maintenance for Architizer’s platform to help architects find products for buildings.",
+      "highlights": [
+        "**Component libraries**: I established and maintained a UI component system to speed up feature development, and improve collaboration with designers",
+        "**Features**: I built internal- and external-facing features: a private messaging interface; directory interfaces to Solr search indexes; etc.",
+        "**Integrations**: Extended integrations with external tools for analytics, error logging, marketing, and customer support"
+      ]
+    },
+    {
+      "name": "EyeCue Lab",
+      "location": "Portland, Oregon",
+      "description": "Product consultancy",
+      "position": "Software Engineer",
+      "url": "https://eyecuelab.com",
+      "startDate": "2014-09-01",
+      "endDate": "2015-08-15",
+      "summary": "Internship-to-hire. Consultancy/agency setting. Built marketing pages and full-stack features for web applications and client projects.",
+      "highlights": []
+    },
+    {
+      "name": "Apple",
+      "location": "remote (Eugene, Oregon)",
+      "description": "Consumer technology company",
+      "position": "AppleCare Advisor",
+      "url": "https://apple.com",
+      "startDate": "2013-06-01",
+      "endDate": "2014-05-30",
+      "summary": "Technical phone support and customer service for macOS products while I completed my degree.",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Oregon",
+      "url": "https://www.uoregon.edu/",
+      "area": "Architecture",
+      "studyType": "B.Arch",
+      "startDate": "2009-09-15",
+      "endDate": "2014-06-15"
+    },
+    {
+      "institution": "Epicodus",
+      "url": "https://www.epicodus.com/",
+      "area": "Code school",
+      "studyType": "",
+      "startDate": "2014-07-05",
+      "endDate": "2014-10-30"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front End",
+      "level": "",
+      "keywords": [
+        "TypeScript",
+        "React",
+        "JSX/TSX",
+        "Next.js",
+        "GraphQL",
+        "Apollo",
+        "Prisma",
+        "Jest",
+        "Node.js"
+      ]
+    },
+    {
+      "name": "UI",
+      "level": "",
+      "keywords": [
+        "Tailwind",
+        "Flowbite",
+        "Ladle",
+        "Storybook",
+        "Stitches",
+        "Radix",
+        "Theme UI",
+        "styled-components",
+        "MDX",
+        "SCSS",
+        "Tachyons",
+        "HTML/CSS"
+      ]
+    },
+    {
+      "name": "General",
+      "keywords": [
+        "Vercel",
+        "Heroku",
+        "Rails",
+        "nginx",
+        "Docker",
+        "AWS",
+        "Segment",
+        "CircleCI",
+        "Django",
+        "GitHub",
+        "Linear",
+        "Figma",
+        "Visual Studio Code"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2023-07-21"
+  }
+}
