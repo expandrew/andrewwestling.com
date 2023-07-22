@@ -1,17 +1,13 @@
 @use "sass:color";
 
 a {
-  color: $text-color;
+  color: inherit;
   font-weight: inherit;
   text-decoration: none;
-
-  &[href] {
-    text-decoration: underline;
-    text-decoration-color: color.adjust($text-color, $lightness: 40%);
-  }
 }
 
-p, q {
+p,
+q {
   line-height: $line-height-1;
 }
 
@@ -31,7 +27,10 @@ li {
   margin: 0 auto;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: $text-color;
+
+  a[href] {
+    text-decoration: underline;
+  }
 }
 
 .table {
@@ -84,7 +83,7 @@ li {
   font-size: $font-size-small;
 
   &:empty {
-    display: none
+    display: none;
   }
 }
 
