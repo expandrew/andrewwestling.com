@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><style>/* Workaround for 'break-before:avoid' */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+span, q {
+  display: block;
+}
+
+p {
+  margin: 0;
+}
+
+@page {
+  size: A4;
+  margin: 15mm 0 20mm 0;
+}
+@page :first {
+  margin-top: 10mm;
+}
+a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+p,
+q {
+  line-height: 1.25em;
+}
+
+li {
+  line-height: 1.35em;
+}
+li:first-child {
+  margin-top: 0;
+}
+
+.content {
+  padding: 0;
+  max-width: 850px;
+  height: auto;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.content a[href] {
+  text-decoration: underline;
+}
+
+.table {
+  width: 100%;
+  display: table;
+}
+.table .main {
+  display: table-cell;
+  width: 70%;
+  padding-right: 50px;
+}
+.table .side {
+  display: table-cell;
+  width: 30%;
+  padding-left: 50px;
+}
+
+.flex {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .flex {
+    flex-direction: row;
+  }
+}
+.flex .main {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 70%;
+}
+@media (min-width: 640px) {
+  .flex .main {
+    width: 70%;
+  }
+}
+.flex .side {
+  display: flex;
+  flex-basis: 30%;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .flex .side {
+    width: 30%;
+  }
+}
+
+.summary {
+  font-size: 15px;
+}
+.summary:empty {
+  display: none;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+}
+
+.margin-container-2:not(:first-child) {
+  margin-top: 20px;
+}
+
+.margin-container-3:not(:first-child) {
+  margin-top: 30px;
+}
+
+.margin-container-4:not(:first-child) {
+  margin-top: 50px;
+}
+
+.padding-container-2 {
+  padding: 20px 0;
+}
+
+.margin-text-1 {
+  margin-top: 2px;
+}
+.margin-text-1:empty {
+  display: none;
+}
+
+.margin-text-2 {
+  margin-top: 4px;
+}
+.margin-text-2:empty {
+  display: none;
+}
+
+.margin-text-3 {
+  margin-top: 6px;
+}
+.margin-text-3:empty {
+  display: none;
+}
+
+.margin-text-4 {
+  margin-top: 8px;
+}
+.margin-text-4:empty {
+  display: none;
+}
+
+.margin-text-5 {
+  margin-top: 14px;
+}
+.margin-text-5:empty {
+  display: none;
+}
+
+.no-break {
+  break-inside: avoid;
+}
+
+.no-alone-1 {
+  break-inside: avoid;
+}
+.no-alone-1::after {
+  content: "";
+  display: block;
+  height: 75px;
+  margin-bottom: -75px;
+}
+
+.no-alone-2 {
+  break-inside: avoid;
+}
+.no-alone-2::after {
+  content: "";
+  display: block;
+  height: 150px;
+  margin-bottom: -150px;
+}
+
+.markdown h1 {
+  font-size: 160%;
+  font-weight: bolder;
+}
+.markdown h2 {
+  font-size: 150%;
+  font-weight: bolder;
+}
+.markdown h3 {
+  font-size: 140%;
+  font-weight: bolder;
+}
+.markdown h4 {
+  font-size: 130%;
+  font-weight: bold;
+}
+.markdown h5 {
+  font-size: 120%;
+  font-weight: bold;
+}
+.markdown h6 {
+  font-size: 110%;
+  font-weight: bold;
+}
+.markdown ul, .markdown ol {
+  margin-left: 20px;
+}
+.markdown img {
+  display: block;
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+.markdown blockquote {
+  margin: 20px 0;
+  padding: 15px 20px;
+}
+.markdown blockquote p {
+  display: inline;
+}
+.markdown code {
+  font-family: monospace;
+}
+
+.main .highlights {
+  width: auto;
+  display: block;
+  padding: 0 10px;
+  margin-bottom: 0;
+}
+.main .highlights li {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.main .left {
+  display: table-cell;
+}
+.main .left .title {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+.main .left .subtitle {
+  font-size: 16px;
+  font-weight: lighter;
+  display: block;
+}
+.main .right {
+  text-align: right;
+  display: table-cell;
+}
+.main .right .date {
+  font-size: 15px;
+  font-weight: lighter;
+  white-space: nowrap;
+}
+
+.basics .main {
+  vertical-align: middle;
+}
+.basics .main .name {
+  font-size: 36px;
+  line-height: 1em;
+  font-weight: bold;
+  display: block;
+  margin-left: -2.52px;
+}
+.basics .main .label {
+  font-size: 28px;
+  line-height: 1em;
+  font-weight: lighter;
+  display: block;
+  margin-left: -1.12px;
+}
+.basics .side {
+  vertical-align: middle;
+  padding-top: 15px;
+}
+.basics .side .contact {
+  list-style-type: none;
+}
+.basics .side .contact li {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+.links ul {
+  list-style: none;
+}
+.links ul li {
+  font-size: 14px;
+}
+
+.education .title {
+  font-size: 15px;
+}
+.education .institution {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.awards .header .title {
+  font-size: 15px;
+}
+.awards .header .awarder {
+  font-size: 15px;
+  font-weight: lighter;
+}
+.awards .summary {
+  font-size: 14px;
+}
+
+.certificates .name {
+  font-size: 15px;
+}
+.certificates .issuer {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.skills .section-title {
+  margin: 0;
+}
+.skills .container {
+  display: block;
+  columns: 1;
+  column-gap: 10px;
+}
+.skills .container .article {
+  break-inside: avoid-column;
+  min-width: 100%;
+  padding-top: 20px;
+}
+@media (min-width: 640px) {
+  .skills .container .article {
+    min-width: 97.5px;
+  }
+}
+.skills .container .article label {
+  display: block;
+  font-size: 18px;
+  font-weight: lighter;
+}
+.skills .container .article span {
+  font-size: 14px;
+  list-style: none;
+}
+
+.languages ul {
+  list-style: none;
+}
+.languages ul li {
+  font-size: 14px;
+}
+
+.interests ul {
+  list-style: none;
+}
+.interests ul li {
+  font-size: 14px;
+}
+
+.references .name {
+  font-size: 15px;
+}
+.references q {
+  font-size: 14.5px;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.meta span {
+  font-size: 14px;
+  font-weight: lighter;
+}</style><title>Resume Andrew Westling – Software Engineer</title></head><body><div class="content"><div class="basics"><div class="flex"><div class="main"><span class="name">Andrew Westling</span><span class="label">Software Engineer</span></div><div class="side"><ul class="contact"><li></li><li><a href="mailto:hi@andrewwestling.com">hi@andrewwestling.com</a></li><li class="margin-text-5">Brooklyn, NY</li></ul></div></div><div class="summary markdown padding-container-2"><p>I'm a designer-turned-engineer. I was going to be an architect, but then I got distracted by the web. These days, I build web apps. My favorite things to work on are <strong>design systems</strong>, and front end features for <strong>TypeScript and JavaScript</strong> applications. I'm handy with <strong>React</strong>, <strong>Next.js</strong>, and <strong>Tailwind</strong>, among many other tools. I also like to think about how processes scale, and how teams can work together more harmoniously.</p>
+</div></div><div class="flex padding-container-2"><div class="main"><div class="work margin-container-4"><p class="section-title no-alone-2">Experience</p><div class="container"><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Senior Software Engineer</span><span class="subtitle margin-text-1"><a href="https://fortelessons.com">Forte</a> · remote (New York City)</span></div><div class="right"><span class="date">July 2022 - March 2023</span></div></div></div><div class="summary markdown margin-text-4"><p>Feature development, setting up tools and culture. I was the first engineering hire. Forte is a purpose-built music education platform for teachers and students.</p>
+</div><ul class="highlights margin-text-4 no-break"><li><span><p><strong>From scratch</strong>: I set up Forte's Next.js application from scratch; I chose tools and workflows to set us up for quick iteration; established a component library to keep things consistent</p>
+</span></li><li><span><p><strong>Built features</strong>: I built the first iteration of various customer-facing features for Forte's marketplace: Teacher Profiles; Certified Institutions; Invitations and Sign Up; Teacher Ratings and Reviews; &quot;Switch Role&quot; functionality; etc.</p>
+</span></li><li><span><p><strong>UX/Product Architecture</strong>: I got to inform the UX, product flow, and overall architecture of a multi-role marketplace application</p>
+</span></li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Senior Front End Engineer</span><span class="subtitle margin-text-1"><a href="https://monograph.com">Monograph</a> · remote (New York City)</span></div><div class="right"><span class="date">April 2021 - June 2022</span></div></div></div><div class="summary markdown margin-text-4"><p>Design system and feature development for Monograph's applications. Monograph makes tools to help architecture firms manage their projects, budgets, and tasks.</p>
+</div><ul class="highlights margin-text-4 no-break"><li><span><p><strong>Design systems</strong>: I built components for Monograph's component library; also wrote documentation and set up workflows between Figma and the codebase</p>
+</span></li><li><span><p><strong>Features</strong>: I built customer-facing features: Team Directory; filter functionality for Monograph Resource; Settings UI; etc.</p>
+</span></li><li><span><p><strong><a href="https://noidea.dog/glue">&quot;Glue&quot; work</a></strong>; A lot of hard-to-quantify things like process documentation, choosing tools, configuration, code reviews, data migration scripts, customer support collaboration, bug triaging, etc.</p>
+</span></li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Software Engineer</span><span class="subtitle margin-text-1"><a href="https://better.com">Better.com</a> · New York City</span></div><div class="right"><span class="date">July 2018 - March 2021</span></div></div></div><div class="summary markdown margin-text-4"><p>Design system and feature development for Better's loan origination platform. Better.com is a mortgage lender.</p>
+</div><ul class="highlights margin-text-4 no-break"><li><span><p><strong>Design systems</strong>: I was one of the first members of Better's Design Systems team; we built libraries to empower our engineering teams to build consistent and clean UIs</p>
+</span></li><li><span><p><strong>Features</strong>: I built assorted borrower-facing features: redisclosure service; &quot;required assets and buffer&quot; logic; authentication/session expiration; UX for uploading a competitor's loan estimate; loan overview page; etc.</p>
+</span></li><li><span><p><strong>Integrations</strong>: I worked on integrations with sales and marketing tools (call scheduling, A/B testing, etc.)</p>
+</span></li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Software Engineer</span><span class="subtitle margin-text-1"><a href="https://architizer.com">Architizer</a> · New York City</span></div><div class="right"><span class="date">September 2015 - June 2018</span></div></div></div><div class="summary markdown margin-text-4"><p>Full-stack and front end feature development and infrastructure maintenance for Architizer’s platform to help architects find products for buildings.</p>
+</div><ul class="highlights margin-text-4 no-break"><li><span><p><strong>Component libraries</strong>: I established and maintained a UI component system to speed up feature development, and improve collaboration with designers</p>
+</span></li><li><span><p><strong>Features</strong>: I built internal- and external-facing features: a private messaging interface; directory interfaces to Solr search indexes; etc.</p>
+</span></li><li><span><p><strong>Integrations</strong>: Extended integrations with external tools for analytics, error logging, marketing, and customer support</p>
+</span></li></ul></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">Software Engineer</span><span class="subtitle margin-text-1"><a href="https://eyecuelab.com">EyeCue Lab</a> · Portland, Oregon</span></div><div class="right"><span class="date">September 2014 - August 2015</span></div></div></div><div class="summary markdown margin-text-4"><p>Internship-to-hire. Consultancy/agency setting. Built marketing pages and full-stack features for web applications and client projects.</p>
+</div></div><div class="article margin-container-3"><div class="header no-alone-1"><div class="table"><div class="left"><span class="title">AppleCare Advisor</span><span class="subtitle margin-text-1"><a href="https://apple.com">Apple</a> · remote (Eugene, Oregon)</span></div><div class="right"><span class="date">June 2013 - May 2014</span></div></div></div><div class="summary markdown margin-text-4"><p>Technical phone support and customer service for macOS products while I completed my degree.</p>
+</div></div></div></div></div><div class="side"><div class="skills margin-container-4"><p class="section-title no-alone-1">Tools</p><div class="container"><div class="article no-break"><label>Front End</label><span class="margin-text-2"><p>TypeScript, React, JSX/TSX, Next.js, GraphQL, Apollo, Prisma, Jest, Node.js</p></span></div><div class="article no-break"><label>UI</label><span class="margin-text-2"><p>Tailwind, Flowbite, Ladle, Storybook, Stitches, Radix, Theme UI, styled-components, MDX, SCSS, Tachyons, HTML/CSS</p></span></div><div class="article no-break"><label>General</label><span class="margin-text-2"><p>Vercel, Heroku, Rails, nginx, Docker, AWS, Segment, CircleCI, Django, GitHub, Linear, Figma, Visual Studio Code</p></span></div></div></div><div class="education margin-container-4"><p class="section-title no-alone-1">Education</p><div class="container"><div class="article margin-container-2 no-break"><div class="title markdown"><p>B.Arch, Architecture</p>
+</div><span class="institution margin-text-2"><a href="https://www.uoregon.edu/">University of Oregon</a></span></div><div class="article margin-container-2 no-break"><div class="title markdown"><p>Code school</p>
+</div><span class="institution margin-text-2"><a href="https://www.epicodus.com/">Epicodus</a></span></div></div></div><div class="links margin-container-4 no-break"><p class="section-title no-alone-1">Links</p><div class="container"><ul><li class="article"><a href="https://andrewwestling.com"><strong>andrewwestling.com</strong></a></li><li class="article margin-text-4"><a href="https://linkedin.com/in/andrewwestling"><strong>linkedin.com</strong>/in/andrewwestling</a></li><li class="article margin-text-4"><a href="https://github.com/expandrew"><strong>github.com</strong>/expandrew</a></li></ul></div></div><div class="meta margin-container-4 no-break"><span class="last-modified">Last updated: July 2023</span></div></div></div></div></body></html>
