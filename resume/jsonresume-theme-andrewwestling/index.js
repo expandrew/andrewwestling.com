@@ -7,7 +7,9 @@ const render = (resume) => pug.renderFile(path.join(__dirname, 'assets', 'templa
   helper
 })
 
-const pdfRenderOptions = {}
+const pdfRenderOptions = {
+  scale: 0.92, // Important to keep it from going to single-column!
+};
 
 module.exports = {
   render,
