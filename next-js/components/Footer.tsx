@@ -50,6 +50,11 @@ export const Footer = (props: { sx?: SxProp }) => {
               </Link>
             </Text>
             <Text variant="footer">
+              <NextLink href="/projects" passHref>
+                <Link>Projects</Link>
+              </NextLink>
+            </Text>
+            <Text variant="footer">
               <NextLink href="/resume" passHref>
                 <Link>Resume</Link>
               </NextLink>
