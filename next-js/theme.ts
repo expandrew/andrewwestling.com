@@ -140,6 +140,18 @@ const theme: Theme = {
         color: 'primary',
         padding: space[1],
       },
+      // For Tidbyt gifs to look a little nicer; this uses the techniques that Pixlet uses when it renders (the mask, etc)
+      '.tidbyt-gif-container': {
+        backgroundColor: '#000',
+        width: 'fit-content',
+      },
+      '.tidbyt-gif': {
+        imageRendering: 'pixelated',
+        maskSize: 'contain',
+        webkitMaskSize: 'contain',
+        maskImage: "url('/assets/projects/tidbyt/mask.png')",
+        webkitMaskImage: "url('/assets/projects/tidbyt/mask.png')",
+      },
     },
     a: {
       color: 'inherit',
