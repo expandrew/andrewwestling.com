@@ -1,0 +1,195 @@
+import NextImage from 'next/image';
+import NextLink from 'next/link';
+import { Meta } from '../../components/Meta';
+import { TidbytGif } from '../../components/TidbytGif';
+import { Grid, Link, Message, Text } from 'theme-ui';
+
+export const date = '2023-07-25';
+export const updatedDate = '2023-07-25';
+
+<Meta
+  title={'Tidbyt Apps'}
+  description={'Tidbyt Apps built by Andrew Westling'}
+  date={date}
+/>
+
+# Tidbyt Apps
+
+<Message sx={{ marginBottom: 3 }}>
+  <Text as="p">
+    I built a few apps to show what's currently playing on my favorite radio
+    stations on my{' '}
+    <NextLink href="https://tidbyt.com" passHref>
+      <Link>Tidbyt</Link>
+    </NextLink>
+    .
+  </Text>
+  <Text as="p" sx={{ marginTop: 3 }}>
+    Each app shows what's currently playing on the radio station, using data
+    from the "Now Playing" web page of its respective radio station.
+  </Text>
+  <Text as="p" sx={{ marginTop: 3 }}>
+    Below are my notes and reflections about developing these apps.
+  </Text>
+</Message>
+
+## Table of Contents
+
+## What is Tidbyt?
+
+_(because I find it's kind of tricky to talk about these projects without first explaining what the device is)_
+
+<NextImage
+  src={'/assets/projects/tidbyt/tidbyt-product-image.png'}
+  width={300}
+  height={300}
+/>
+
+[Tidbyt](https://tidbyt.com/) is a "retro-style display" that shows information about weather, transit, finance, sports, and [all sorts of other things](https://tidbyt.com/pages/apps). It kind of looks like a [Lite-Brite](https://en.wikipedia.org/wiki/Lite-Brite), but way better. It's basically an expensive tech toy. [David Pierce explains it](https://www.theverge.com/23303371/tidbyt-review-desk-accessory-screen) way better than I can.
+
+The key thing is, you can write apps for it.
+
+It's a 64x32 color pixel display, connected to the internet. It's got a good little [developer community](https://tidbyt.dev) forming around it. It's also just satisfying to write code and cause something across the room to light up.
+
+In any case, I'd been thinking I should try and build something for it ever since I got one. My partner and I each have one in our homes, and every now and then we'd say to each other "wouldn't it be cool if we could see _(thing)_ on the Tidbyt?" I do computers, let's do this.
+
+## My Apps
+
+### WQXR
+
+This shows what's currently playing on [WQXR](https://wqxr.org), New York's Classical Music Radio Station, on the Tidbyt.
+
+| Horizontal                                                                   | Vertical                                                                   |
+| :--------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| <TidbytGif width={256} src="/assets/projects/tidbyt/wqxr-horizontal.gif"  /> | <TidbytGif width={256} src="/assets/projects/tidbyt/wqxr-vertical.gif"  /> |
+
+I made this app because we frequently listen to WQXR at home, and we sometimes find ourselves asking "what piece is this?" or "who's the composer?" so this scratches that itch.
+
+This was my first Tidbyt app, but each app I built afterward used the same basic structure.
+
+👉 [See the code on GitHub](https://github.com/expandrew/tidbyt/tree/main/wqxr)
+
+### KQAC
+
+This shows what's currently playing on [All Classical Portland](https://allclassical.org) on the Tidbyt.
+
+| Horizontal                                                                  | Vertical                                                                  |
+| :-------------------------------------------------------------------------- | :------------------------------------------------------------------------ |
+| <TidbytGif width={256} src="/assets/projects/tidbyt/kqac-horizontal.gif" /> | <TidbytGif width={256} src="/assets/projects/tidbyt/kqac-vertical.gif" /> |
+
+It's very similar to the WQXR app, except it points at the All Classical Portland data.
+
+If you're curious about the minor internal differences it has from WQXR, they are here:
+
+- **Soloist/Ensemble/Conductor**: I had to combine these three into one setting called "Show ensemble info" because I noticed that All Classical sometimes stuffs a soloist's name in to the "ensemble" line in their data, if there are multiple soloists. I suspect this is just a hack on how their website displays data; their web UI seems to have
+- **Composer Names**: All Classical lists the composer's last name first (like "Brahms, Johannes"), whereas WQXR does it like "Johannes Brahms" 😑
+
+My developer brain wants everything to be completely consistent, but the reality is that the only people who will notice are the ones who happen to use both apps. I expect someone would just install the app for the radio station they normally listen to, and know no different. I'm over it. 🤷‍♀️
+
+👉 [See the code on GitHub](https://github.com/expandrew/tidbyt/tree/main/kqac)
+
+### WNYC
+
+This shows what's currently playing on [WNYC](https://wnyc.org) on Tidbyt
+
+|                      | Preview                                                                               |
+| :------------------- | :------------------------------------------------------------------------------------ |
+| Name and Image       | <TidbytGif width={256} src="/assets/projects/tidbyt/wnyc-name-and-image.gif" />       |
+| Name and Description | <TidbytGif width={256} src="/assets/projects/tidbyt/wnyc-name-and-description.gif" /> |
+| Name only            | <TidbytGif width={256} src="/assets/projects/tidbyt/wnyc-name-only.gif" />            |
+
+Key points about this app:
+
+- **Layout**: In this app, I decided to be a little more opinionated about the layout choices. In previous apps, I let the user choose both scroll direction, scroll speed, and amount of information. On the WNYC app, I decided to constrain these choices by letting the user instead change the "layout", which was just a combination of the other three settings in a thoughtful way.
+
+👉 [See the code on GitHub](https://github.com/expandrew/tidbyt/tree/main/wnyc)
+
+## Development Environment
+
+Tidbyt's team has done a fantastic job at making good tools (like [Pixlet](https://github.com/tidbyt/pixlet)) for developing for the device.
+
+In my own workflow, I put together a few other helpful pieces to make my own development experience more comfortable.
+
+I do everything out of my [expandrew/tidbyt](https://github.com/expandrew/tidbyt) repo. When I'm ready to submit an app to the community directory, I package the code up and copy it into my fork of [tidbyt/community](https://github.com/tidbyt/community) and make a PR from there.
+
+### Mock APIs
+
+_(because the data on the endpoint changes and I want to be able to test after it's gone)_
+
+Because each of my apps just reads JSON data from a web endpoint, I decided to set up a local mock API endpoint that could serve responses for different situations.
+
+My process for creating this was this:
+
+- Open to the radio station's real web endpoint in a browser
+- Copy the entire data of the response
+- Paste the data into a new JSON file in a "mock-api" folder
+- Save the file with a descriptive name
+- Run a local Python HTTP server, and point it at the "mock-api" folder where all my JSON files are saved:
+  - `python3 -m http.server 8080 --bind 127.0.0.1 --directory ./mock-api`
+- Replace the endpoint path in my app to point at a particular JSON file on the server I'm running
+
+I kept a bunch of commented-out lines at the top of my app, corresponding to the different files I had saved in the "mock-api" folder.
+
+When I wanted to see how the app handled a particular response, I uncommented the corresponding line, which caused my app to use the mock data instead of the real data from the radio station. Good enough 🤷‍♀️
+
+Some general notes are below:
+
+For the classical stations:
+
+- **Combinations of Data**: Some pieces have any combination of a conductor, ensemble name, soloists, and even other potentially-interesting things to show; I tried to capture scenarios like the below:
+  - with a conductor (i.e. a regular symphonic work)
+  - with a conductor and soloist(s) (i.e. a concerto)
+  - without a conductor
+  - without an ensemble name (i.e. a sonata)
+  - with a long composer name (for layout and text wrapping)
+  - with a long song title (for layout and text wrapping)
+  - between songs (no catalog item)
+  - specific show (a particular show without catalog item, i.e. NYPhil broadcast)
+- **Capture the Weird Stuff**: The currently-playing piece changes relatively often. If I see a particular piece or show that I want to test the layout with, it's helpful to capture the API response immediately (using the steps above to save it) then serve it from the mock API; there's a good chance the piece will change before I'm done with my work, so this protects against that
+- **Long Titles**: Some piece titles can get pretty long; there are still a few rough edges in my layouts with this, particularly when a single word is longer than 64px wide when using the "vertical" scroll direction, or just when a piece title is generally long when using the "horizontal" scroll direction
+- **No Catalog Item**: Sometimes there is special programming (e.g. "The New York Philharmonic This Week") and we don't get the data about what particular song is playing (the "catalog item"); in these cases, we still want to show something meaningful, so we display the title of the show, instead of the title of the piece.
+
+For the non-classical stations (like WNYC or other NPR stations):
+
+- **Program, Not Piece**: Usually what's currently playing is a _program_, not a particular piece or song
+- **Infrequent Changes**: Programs change less frequently (maybe every 30 or 60 minutes)
+- **Schedule**: There's usually a schedule on the website of the programs for that day, so you know what to expect; I found this helpful so I didn't have to listen to the station all day to wait for the API data to change
+
+See examples of my mock API data on GitHub: [WQXR](https://github.com/expandrew/tidbyt/tree/main/wqxr/wqxr-mock-api), [WNYC](https://github.com/expandrew/tidbyt/tree/main/wnyc/wnyc-mock-api)
+
+### VS Code Tasks
+
+As with any project I work on, I like to use [Tasks](https://code.visualstudio.com/docs/editor/tasks) in Visual Studio Code to reduce cognitive load when I need to start/stop/run commands in the development environment.
+
+I set up the following tasks:
+
+- **Pixlet: Serve**: Start the app in Pixlet
+- **Pixlet: Format**: Format with Pixlet's built-in formatting
+- **Pixlet: Render and push to my Tidbyt**: Render and push it to my actual device
+- **Pixlet: Generate the preview gif**: Generate the preview GIF for my README
+- **API: Serve mock API**: Serve fake responses from my local machine for different scenarios from the real API
+
+I configured my repo's tasks to use an [input variable](https://code.visualstudio.com/docs/editor/variables-reference#_input-variables) to choose which app I wanted to start.
+
+[See my tasks.json file on GitHub](https://github.com/expandrew/tidbyt/blob/main/.vscode/tasks.json)
+
+## Takeaways
+
+- **Unintended Uses**: I built the app for the use-case of _"I'm currently listening to the radio; what am I listening to?"_ As I lived with the app more, I found myself glancing at the Tidbyt throughout the day and seeing that a piece I like was currently playing, prompting me to go turn on the radio and listen. Kind of reversed from what I intended when I made it, but a fun little surprise.
+- **Replicable**: These apps ended up being kind of "formulaic." I'd love to make more of these. I just did my favorite radio stations, but they were pretty easy to make. I could see making a generic "New York Public Radio" app that gives you a setting to choose which station to show, but I decided not to do that because there are nuances with displaying information about classical music that don't translate to other stations.
+- **Minor Inconsistencies**: Between the three apps, there are minor inconsistencies; no one will care from the outside. I know they're there, but the users don't.
+- **New API?**: I think New York Public Radio might be moving to a new API at some point; I noticed the newer ["Radio"](https://www.wnyc.org/radio/) page for WNYC was pointing to a different API than WQXR, even though the one WQXR points to has an option for getting data for WNYC if you specify that as the path. Basically, I'm expecting to have to migrate the NYPR apps to the newer API once everything is using it. I did capture some responses from it in the [v4](https://github.com/expandrew/tidbyt/tree/main/wnyc/wnyc-mock-api/v4) folder of WNYC's mock API responses, just in case
+- **Horizontal Marquees are Slow**: On the classical music apps, I was getting impatient waiting for horizontal marquees to finish scrolling for a long title. This prompted me to add the "vertical" mode, as an alternative for people like me. My partner still likes the horizontal mode, that's why there's both options.
+- **Radio Fatigue**: Listening to WNYC all day is actually kind of exhausting. There's a lot of bad news these days. Building the classical music apps was easier and more enjoyable because the music just feels better 😌
+- **Tidbyt's Cloud**: Something I didn't expect is that _very little computation happens on the Tidbyt device, itself_. It all happens in the cloud, and once your device is connected to Wi-Fi, it just sends heartbeats to the cloud, which returns rendered WebP images for the device to display. In retrospect, this actually is kinda brilliant architecture; it just wasn't what I expected.
+- **"Ambient Information"**: As with other Tidbyt apps, it's fun to have this kind of information just _around and available_ without having to go seeking it 🤗
+
+---
+
+<Text as="p" variant="label">
+  Originally posted: {date}
+</Text>
+
+<Text as="p" variant="label">
+  Last updated: {updatedDate}
+</Text>
