@@ -15,6 +15,7 @@ import { Greeting } from '../components/Greeting';
 import { Header } from '../components/Header';
 import { Meta } from '../components/Meta';
 import { PhotoOfMe } from '../components/PhotoOfMe';
+import { TidbytGif } from '../components/TidbytGif';
 
 export const ComponentWrapper = ({ children }) => (
   <Box
@@ -131,6 +132,8 @@ export const ThemeOutput = () => {
 - [Header](#header)
 - [Message](#message)
 - [PhotoOfMe](#photoofme)
+- [Buttons](#buttons)
+- [TidbytGif](#tidbytgif)
 
 ## DarkModeToggle
 
@@ -156,7 +159,7 @@ Global footer on this website.
 
 ## Greeting
 
-This is the banner at the top of my index page and my resume.
+This is the banner at the top of my index page ~~and my resume~~.
 
 <ComponentWrapper>
   <Greeting />
@@ -220,4 +223,14 @@ These are buttons, for use wherever a button is needed.
     <Button>Primary button</Button>
     <Button variant="small">Small button</Button>
   </Grid>
+</ComponentWrapper>
+
+---
+
+## TidbytGif
+
+This is to display a Tidbyt preview gif with the nicer "rounded" appearance from Pixlet's UI.
+
+<ComponentWrapper>
+  <TidbytGif src={'/assets/projects/tidbyt/wnyc-name-and-image.gif'} />
 </ComponentWrapper>

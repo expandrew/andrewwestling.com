@@ -106,12 +106,9 @@ const theme: Theme = {
         variant: 'text.heading',
         fontSize: [fontSizes[2], fontSizes[3]],
       },
-      // Special margins for the headings on items in "Experience" section on Resume
-      '#experienceContainer > h3:not(:first-child)': {
+      // More space between headings
+      'h2:not(:first-of-type)': {
         marginTop: [space[5]],
-      },
-      '#experienceContainer > h3': {
-        marginBottom: [space[1]],
       },
       h4: {
         variant: 'text.heading',
@@ -139,6 +136,22 @@ const theme: Theme = {
         borderRadius: 'default',
         color: 'primary',
         padding: space[1],
+      },
+      // For Tidbyt gifs to look a little nicer; this uses the techniques that Pixlet uses when it renders (the mask, etc)
+      '.tidbyt-gif-container': {
+        backgroundColor: '#000',
+        width: 'fit-content',
+      },
+      '.tidbyt-gif': {
+        imageRendering: 'pixelated',
+        maskSize: 'contain',
+        webkitMaskSize: 'contain',
+        maskImage: "url('/assets/projects/tidbyt/mask.png')",
+        webkitMaskImage: "url('/assets/projects/tidbyt/mask.png')",
+      },
+      // For fixing how MDX renders `<p>` tags inside of lists, causing margins
+      'li > p': {
+        margin: 0,
       },
     },
     a: {
