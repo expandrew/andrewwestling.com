@@ -32,6 +32,18 @@
         "cwd": "resume/"
       },
       "group": "none",
+      "dependsOn": ["Resume: Regenerate CSS"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Resume: Regenerate CSS",
+      "detail": "Generate resume CSS from SCSS files",
+      "type": "npm",
+      "script": "gulp:css",
+      "options": {
+        "cwd": "resume/jsonresume-theme-andrewwestling"
+      },
+      "group": "none",
       "problemMatcher": []
     }
   ]
