@@ -7,7 +7,7 @@
     "email": "hi@andrewwestling.com",
     "phone": "",
     "url": "https://andrewwestling.com",
-    "summary": "I'm a designer-turned-engineer. I was going to be an architect, but then I got distracted by the web. These days, I build web apps. My favorite things to work on are **design systems**, and front end features for **TypeScript and JavaScript** applications. I'm handy with **React**, **Next.js**, and **Tailwind**, among many other tools. I also like to think about how processes scale, and how teams can work together more harmoniously.",
+    "summary": "Seasoned web engineer, with a background in design and architecture. Specialty in crafting resilient web applications, with a particular emphasis on design systems and both front-end and full-stack features. Skilled with **TypeScript**, **React**, **Next.js**, **Tailwind**, and more. Dedicated to optimizing processes for scalability and fostering effective teamwork and communication.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -37,11 +37,11 @@
       "url": "https://fortelessons.com",
       "startDate": "2022-07-11",
       "endDate": "2023-03-31",
-      "summary": "Feature development, setting up tools and culture. I was the first engineering hire. Forte is a purpose-built music education platform for teachers and students.",
+      "summary": "Feature development, setting up tools and culture. First engineering hire. Forte is a purpose-built music education platform for teachers and students.",
       "highlights": [
-        "**From scratch**: I set up Forte's Next.js application from scratch; I chose tools and workflows to set us up for quick iteration; established a component library to keep things consistent",
-        "**Built features**: I built the first iteration of various customer-facing features for Forte's marketplace: Teacher Profiles; Certified Institutions; Invitations and Sign Up; Teacher Ratings and Reviews; \"Switch Role\" functionality; etc.",
-        "**UX/Product Architecture**: I got to inform the UX, product flow, and overall architecture of a multi-role marketplace application"
+        "**From scratch**: set up Forte's Next.js application from the ground up; chose tools and workflows to enable quick iteration; established a component library for consistent user experience",
+        "**Built features**: built the first iteration of various customer-facing features for Forte's marketplace: Teacher Profiles; Certified Institutions; Invitations and Sign Up; Teacher Ratings and Reviews; \"Switch Role\" functionality; etc.",
+        "**UX/Product Architecture**: informed the UX, product flow, and overall architecture of a multi-role marketplace application"
       ]
     },
     {
@@ -54,9 +54,9 @@
       "endDate": "2022-06-10",
       "summary": "Design system and feature development for Monograph's applications. Monograph makes tools to help architecture firms manage their projects, budgets, and tasks.",
       "highlights": [
-        "**Design systems**: I built components for Monograph's component library; also wrote documentation and set up workflows between Figma and the codebase",
-        "**Features**: I built customer-facing features: Team Directory; filter functionality for Monograph Resource; Settings UI; etc.",
-        "**[\"Glue\" work](https://noidea.dog/glue)**; A lot of hard-to-quantify things like process documentation, choosing tools, configuration, code reviews, data migration scripts, customer support collaboration, bug triaging, etc."
+        "**Design systems**: built components for Monograph's component library; wrote documentation and set up workflows between Figma and the codebase",
+        "**Features**: built customer-facing features: Team Directory; filter functionality for Monograph Resource; Settings UI; \"Consultants\" feature; etc.",
+        "**[\"Glue\" work](https://noidea.dog/glue)**; a lot of hard-to-quantify things like process documentation, choosing tools, configuration, code reviews, data migration scripts, customer support collaboration, bug triaging, etc."
       ]
     },
     {
@@ -69,9 +69,9 @@
       "endDate": "2021-03-30",
       "summary": "Design system and feature development for Better's loan origination platform. Better.com is a mortgage lender.",
       "highlights": [
-        "**Design systems**: I was one of the first members of Better's Design Systems team; we built libraries to empower our engineering teams to build consistent and clean UIs",
-        "**Features**: I built assorted borrower-facing features: redisclosure service; \"required assets and buffer\" logic; authentication/session expiration; UX for uploading a competitor's loan estimate; loan overview page; etc.",
-        "**Integrations**: I worked on integrations with sales and marketing tools (call scheduling, A/B testing, etc.)"
+        "**Design systems**: established Better's Design Systems team; built libraries to empower engineering teams to build consistent and clean UIs",
+        "**Features**: built assorted borrower-facing features: Redisclosure Service; \"Required Assets and Buffer\" logic; Authentication/Session Expiration; UX for uploading a competitor's Loan Estimate; Loan Overview page; etc.",
+        "**Integrations**: extended integrations with sales and marketing tools (call scheduling, A/B testing, etc.)"
       ]
     },
     {
@@ -84,9 +84,9 @@
       "endDate": "2018-06-15",
       "summary": "Full-stack and front end feature development and infrastructure maintenance for Architizer’s platform to help architects find products for buildings.",
       "highlights": [
-        "**Component libraries**: I established and maintained a UI component system to speed up feature development, and improve collaboration with designers",
-        "**Features**: I built internal- and external-facing features: a private messaging interface; directory interfaces to Solr search indexes; etc.",
-        "**Integrations**: Extended integrations with external tools for analytics, error logging, marketing, and customer support"
+        "**Component libraries**: established and maintained a UI component system to speed up feature development, and improve collaboration with designers",
+        "**Features**: built internal- and external-facing features: a private messaging interface; directory interfaces to Solr search indexes; etc.",
+        "**Integrations**: extended integrations with external tools for analytics, error logging, marketing, and customer support"
       ]
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://apple.com",
       "startDate": "2013-06-01",
       "endDate": "2014-05-30",
-      "summary": "Technical phone support and customer service for macOS products while I completed my degree.",
+      "summary": "Technical phone support and customer service for macOS products while completing degree.",
       "highlights": []
     }
   ],
@@ -132,10 +132,28 @@
   ],
   "skills": [
     {
+      "name": "General",
+      "keywords": [
+        "TypeScript",
+        "JavaScript",
+        "Rails",
+        "Django",
+        "Vercel",
+        "Heroku",
+        "AWS",
+        "CircleCI",
+        "GitHub",
+        "Docker",
+        "Segment",
+        "Linear",
+        "Figma",
+        "Visual Studio Code"
+      ]
+    },
+    {
       "name": "Front End",
       "level": "",
       "keywords": [
-        "TypeScript",
         "React",
         "JSX/TSX",
         "Next.js",
@@ -156,36 +174,18 @@
         "Storybook",
         "Stitches",
         "Radix",
-        "Theme UI",
         "styled-components",
+        "Theme UI",
         "MDX",
         "SCSS",
         "Tachyons",
         "HTML/CSS"
       ]
-    },
-    {
-      "name": "General",
-      "keywords": [
-        "Vercel",
-        "Heroku",
-        "Rails",
-        "nginx",
-        "Docker",
-        "AWS",
-        "Segment",
-        "CircleCI",
-        "Django",
-        "GitHub",
-        "Linear",
-        "Figma",
-        "Visual Studio Code"
-      ]
     }
   ],
   "meta": {
     "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
-    "version": "v1.0.0",
-    "lastModified": "2023-07-21"
+    "version": "v1.0.1",
+    "lastModified": "2023-09-14"
   }
 }

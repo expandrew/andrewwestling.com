@@ -47,7 +47,7 @@ const calcDateRange = (start, end) => {
     return null
   }
 
-  return array.join(' - ')
+  return array.join(' – ')
 }
 
 const beautifyDate = (date) => moment(date, 'YYYY-MM-DD').format('MMMM YYYY')

@@ -94,22 +94,26 @@ li:first-child {
   display: flex;
   flex-basis: 30%;
   flex-direction: column;
+  border-left: none;
+  padding-left: 0;
 }
 @media (min-width: 640px) {
   .flex .side {
+    border-left: 1px solid #ddd;
+    padding-left: 12px;
     width: 30%;
   }
 }
 
 .summary {
-  font-size: 15px;
+  font-size: 14px;
 }
 .summary:empty {
   display: none;
 }
 
 .section-title {
-  font-size: 26px;
+  font-size: 18px;
   font-weight: normal;
   margin: 0 0 20px 0;
 }
@@ -128,6 +132,10 @@ li:first-child {
 
 .padding-container-2 {
   padding: 20px 0;
+}
+
+.padding-container-3 {
+  padding: 30px 0;
 }
 
 .margin-text-1 {
@@ -250,19 +258,21 @@ li:first-child {
   font-size: 18px;
   font-weight: bold;
   display: block;
+  line-height: 1.25em;
 }
 .main .left .subtitle {
-  font-size: 16px;
-  font-weight: lighter;
+  font-size: 14px;
+  font-weight: normal;
   display: block;
+  line-height: 1.25em;
 }
 .main .right {
   text-align: right;
   display: table-cell;
 }
 .main .right .date {
-  font-size: 15px;
-  font-weight: lighter;
+  font-size: 12px;
+  font-weight: normal;
   white-space: nowrap;
 }
 
@@ -272,16 +282,15 @@ li:first-child {
 .basics .main .name {
   font-size: 36px;
   line-height: 1em;
-  font-weight: bold;
   display: block;
   margin-left: -2.52px;
 }
 .basics .main .label {
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1em;
-  font-weight: lighter;
+  font-weight: normal;
   display: block;
-  margin-left: -1.12px;
+  margin-left: -1.04px;
 }
 .basics .side {
   vertical-align: middle;
@@ -291,8 +300,13 @@ li:first-child {
   list-style-type: none;
 }
 .basics .side .contact li {
-  font-size: 16px;
+  overflow: auto;
+  font-size: 14px;
   line-height: 1.6em;
+}
+.basics .side .contact li > * {
+  float: left;
+  margin-right: 3px;
 }
 
 .links ul {
@@ -303,30 +317,30 @@ li:first-child {
 }
 
 .education .title {
-  font-size: 15px;
+  font-size: 14px;
 }
 .education .institution {
-  font-size: 15px;
-  font-weight: lighter;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .awards .header .title {
-  font-size: 15px;
+  font-size: 14px;
 }
 .awards .header .awarder {
-  font-size: 15px;
-  font-weight: lighter;
+  font-size: 14px;
+  font-weight: normal;
 }
 .awards .summary {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .certificates .name {
-  font-size: 15px;
+  font-size: 14px;
 }
 .certificates .issuer {
-  font-size: 15px;
-  font-weight: lighter;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .skills .section-title {
@@ -335,7 +349,7 @@ li:first-child {
 .skills .container {
   display: block;
   columns: 1;
-  column-gap: 10px;
+  column-gap: 20px;
 }
 .skills .container .article {
   break-inside: avoid-column;
@@ -349,8 +363,8 @@ li:first-child {
 }
 .skills .container .article label {
   display: block;
-  font-size: 18px;
-  font-weight: lighter;
+  font-size: 16px;
+  font-weight: bold;
 }
 .skills .container .article span {
   font-size: 14px;
@@ -361,26 +375,26 @@ li:first-child {
   list-style: none;
 }
 .languages ul li {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .interests ul {
   list-style: none;
 }
 .interests ul li {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .references .name {
-  font-size: 15px;
+  font-size: 14px;
 }
 .references q {
-  font-size: 14.5px;
-  font-weight: lighter;
+  font-size: 13px;
+  font-weight: normal;
   font-style: italic;
 }
 
 .meta span {
-  font-size: 14px;
-  font-weight: lighter;
+  font-size: 12px;
+  font-weight: normal;
 }

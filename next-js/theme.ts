@@ -201,6 +201,9 @@ const theme: Theme = {
       fontSize: [0],
       color: 'muted',
       bg: 'highlight',
+      borderColor: 'muted',
+      borderStyle: 'solid',
+      borderWidth: '1px',
       '&:hover': {
         color: 'highlight',
         bg: 'muted',

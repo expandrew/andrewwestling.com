@@ -8,7 +8,7 @@
   .container {
     display: block;
     columns: 1;
-    column-gap: $space-1;
+    column-gap: $space-2;
 
     .article {
       break-inside: avoid-column;
@@ -23,12 +23,12 @@
 
       label {
         display: block;
-        font-size: $font-size-large;
-        font-weight: lighter;
+        font-size: $font-size-medium;
+        font-weight: bold;
       }
 
       span {
-        font-size: $font-size-xsmall;
+        font-size: $font-size-small;
         list-style: none;
       }
     }

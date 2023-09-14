@@ -14,35 +14,38 @@
   padding: $space-2 0;
 }
 
+.padding-container-3 {
+  padding: $space-3 0;
+}
+
 .margin-text-1 {
-  @include margin-text(2px)
+  @include margin-text(2px);
 }
 
 .margin-text-2 {
-  @include margin-text(4px)
+  @include margin-text(4px);
 }
 
 .margin-text-3 {
-  @include margin-text(6px)
+  @include margin-text(6px);
 }
 
 .margin-text-4 {
-  @include margin-text(8px)
+  @include margin-text(8px);
 }
 
 .margin-text-5 {
-  @include margin-text(14px)
+  @include margin-text(14px);
 }
-
 
 .no-break {
   break-inside: avoid;
 }
 
 .no-alone-1 {
-  @include no-alone(75px)
+  @include no-alone(75px);
 }
 
 .no-alone-2 {
-  @include no-alone(150px)
+  @include no-alone(150px);
 }
