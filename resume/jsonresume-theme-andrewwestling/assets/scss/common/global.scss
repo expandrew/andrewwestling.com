@@ -73,7 +73,11 @@ li {
     display: flex;
     flex-basis: $content-side-percentage;
     flex-direction: column;
+    border-left: none;
+    padding-left: 0;
     @include breakpoint(lg) {
+      border-left: 1px solid #ddd;
+      padding-left: 12px;
       width: $content-side-percentage;
     }
   }
@@ -88,7 +92,7 @@ li {
 }
 
 .section-title {
-  font-size: $font-size-xlarge;
+  font-size: $font-size-large;
   font-weight: normal;
   margin: 0 0 $space-2 0;
 }

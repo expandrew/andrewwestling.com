@@ -5,7 +5,6 @@
     .name {
       font-size: $header-name-font-size;
       line-height: 1em;
-      font-weight: bold;
       display: block;
       margin-left: -$header-name-font-size * 0.07;
     }
@@ -13,7 +12,7 @@
     .label {
       font-size: $header-line-font-size;
       line-height: 1em;
-      font-weight: lighter;
+      font-weight: normal;
       display: block;
       margin-left: -$header-line-font-size * 0.04;
     }
@@ -27,7 +26,12 @@
       list-style-type: none;
 
       li {
-        font-size: $font-size-medium;
+        overflow: auto;
+        & > * {
+          float: left;
+          margin-right: 3px;
+        }
+        font-size: $font-size-small;
         line-height: $line-height-3;
       }
     }
