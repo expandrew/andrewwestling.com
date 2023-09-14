@@ -8,6 +8,6 @@ div(class='basics')
         li=resume.basics.phone
         li
           a(href=`mailto:${resume.basics.email}`)=resume.basics.email
-        li(class='margin-text-5')=helper.calcLocation(resume.basics.location)
+        li=helper.calcLocation(resume.basics.location)
   if resume.basics.summary
     div(class='summary markdown padding-container-2')!=helper.mdToHtml(resume.basics.summary)
