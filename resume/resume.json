@@ -30,6 +30,16 @@
   },
   "work": [
     {
+      "name": "Droit",
+      "location": "New York City",
+      "description": "Financial tools for decision-making and regulatory compliance",
+      "position": "Senior UI Engineer",
+      "url": "https://droit.tech",
+      "startDate": "2023-10-30",
+      "summary": "Design system and user interface development. Droit builds tools for decision-making and global regulatory compliance for financial institutions.",
+      "highlights": []
+    },
+    {
       "name": "Forte",
       "location": "remote (New York City)",
       "description": "Online music education platform",
@@ -185,7 +195,7 @@
   ],
   "meta": {
     "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
-    "version": "v1.0.1",
-    "lastModified": "2023-09-14"
+    "version": "v1.1.0",
+    "lastModified": "2023-12-14"
   }
 }
