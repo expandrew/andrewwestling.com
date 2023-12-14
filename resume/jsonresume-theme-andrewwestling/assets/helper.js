@@ -27,8 +27,8 @@ const calcLocation = (location) => {
   return array.length > 0 ? array.join(', ') : null
 }
 
-const calcDate = (date) => {
-  return date ? beautifyDate(date) : null
+const calcDate = (date, format = 'MMMM YYYY') => {
+  return date ? beautifyDate(date, format) : null
 }
 
 const calcDateRange = (start, end) => {
@@ -50,7 +50,26 @@ const calcDateRange = (start, end) => {
   return array.join(' – ')
 }
 
-const beautifyDate = (date) => moment(date, 'YYYY-MM-DD').format('MMMM YYYY')
+const calcYearRange = (start, end) => {
+  const array = [];
+
+  const startDate = calcDate(start, 'YYYY');
+  const endDate = calcDate(end, 'YYYY');
+
+  if (startDate && endDate) {
+    array.push(startDate, endDate);
+  } else if (startDate) {
+    array.push(startDate, 'Present');
+  } else if (endDate) {
+    array.push(endDate);
+  } else {
+    return null;
+  }
+
+  return array.join('–');
+};
+
+const beautifyDate = (date, format = 'MMMM YYYY') => moment(date, 'YYYY-MM-DD').format(format)
 
 const beautifyArray = (separator, array) => array.filter(x => x).join(separator)
 
@@ -84,6 +103,7 @@ module.exports = {
   calcLocation,
   calcDate,
   calcDateRange,
+  calcYearRange,
   beautifyDate,
   beautifyArray,
   arrayToPhrase,

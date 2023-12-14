@@ -14,7 +14,7 @@ if helper.validArray(resume.work)
                     | #{' · '}
                   | #{work.location}
               div(class='right')
-                span(class='date')=helper.calcDateRange(work.startDate, work.endDate)
+                span(class='date' title=helper.calcDateRange(work.startDate, work.endDate))=helper.calcYearRange(work.startDate, work.endDate)
           div(class='summary markdown margin-text-4')!=helper.mdToHtml(work.summary)
           if helper.validArray(work.highlights)
             ul(class='highlights margin-text-4 no-break')
