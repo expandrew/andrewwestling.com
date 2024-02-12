@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { GoatCounter } from "./components/GoatCounter";
+import "./print.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
