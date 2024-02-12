@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { GoatCounter } from "./components/GoatCounter";
@@ -22,7 +23,9 @@ export const metadata: Metadata = {
 export default function App({ children }: { children: React.ReactNode }) {
   return (
     <html>
-      <GoatCounter />
+      <Suspense>
+        <GoatCounter />
+      </Suspense>
       <body className="bg-background dark:bg-background-dark text-text dark:text-text-dark">
         <div className="flex flex-col min-h-screen">
           <Header />
