@@ -10,6 +10,13 @@ export const metadata: Metadata = {
     template: "%s | andrewwestling.com",
     default: "andrewwestling.com",
   },
+  description: "Andrew M Westling is a software engineer in New York City.",
+  icons: {
+    icon: "/assets/favicon/favicon-32x32.png",
+    shortcut: "/assets/favicon/favicon.ico",
+    apple: "/assets/favicon/apple-touch-icon.png",
+  },
+  manifest: "/assets/favicon/site.webmanifest",
 };
 
 export default function App({ children }: { children: React.ReactNode }) {
