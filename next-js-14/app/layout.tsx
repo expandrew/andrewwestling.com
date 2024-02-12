@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function App({ children }: { children: React.ReactNode }) {
   return (
     <html>
+      <GoatCounter />
       <body className="bg-background dark:bg-background-dark text-text dark:text-text-dark">
         <div className="flex flex-col min-h-screen">
           <Header />
