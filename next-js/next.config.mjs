@@ -1,6 +1,8 @@
-// next.config.mjs
+import createMDX from "@next/mdx";
+
 /** @type {import('next').NextConfig} */
-export default {
+const nextConfig = {
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   webpack: (config) => {
     // Add a rule to handle .html files
     config.module.rules.push({
@@ -11,3 +13,11 @@ export default {
     return config;
   },
 };
+
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [],
+  },
+});
+
+export default withMDX(nextConfig);
