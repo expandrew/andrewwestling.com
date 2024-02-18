@@ -1,5 +1,5 @@
-import { Greeting } from "./components/Greeting";
-import { PhotoOfMe } from "./components/PhotoOfMe";
+import { Greeting } from "@components/Greeting";
+import { PhotoOfMe } from "@components/PhotoOfMe";
 
 const Home = () => (
   <>

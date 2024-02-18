@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { GoatCounter } from "./components/GoatCounter";
+import { Footer } from "@components/Footer";
+import { Header } from "@components/Header";
+import { GoatCounter } from "@components/GoatCounter";
 import "./print.css";
 import "./globals.css";
 
