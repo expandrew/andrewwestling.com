@@ -9,4 +9,23 @@
   a:hover {
     @apply hover:text-primary;
   }
+
+  .anchor-link {
+    visibility: hidden;
+    float: left;
+    line-height: 1;
+    padding-right: 0.25rem;
+    margin-left: 0.5rem;
+    fill: text;
+  }
+
+  /* For remark-autolink-headings */
+  h1:hover .anchor-link,
+  h2:hover .anchor-link,
+  h3:hover .anchor-link,
+  h4:hover .anchor-link,
+  h5:hover .anchor-link,
+  h6:hover .anchor-link {
+    visibility: visible;
+  }
 }

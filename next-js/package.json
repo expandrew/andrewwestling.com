@@ -16,7 +16,11 @@
     "html-loader": "^5.0.0",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "remark-autolink-headings": "^7.0.1",
+    "remark-collapse": "^0.1.2",
+    "remark-slug": "^7.0.1",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
