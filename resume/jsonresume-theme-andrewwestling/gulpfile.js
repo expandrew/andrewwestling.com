@@ -1,6 +1,8 @@
 const { src, dest, watch, series } = require('gulp')
 const pug = require('gulp-pug')
 const sass = require('gulp-sass')(require('sass'))
+const replace = require('gulp-replace')
+const classPrefix = require('gulp-class-prefix')
 
 const bs = require('browser-sync').create()
 
@@ -10,6 +12,7 @@ const helper = require('./assets/helper.js')
 function css () {
   return src('./assets/styles.scss')
     .pipe(sass())
+    .pipe(classPrefix(helper.CSS_PREFIX))
     .pipe(dest('./assets'))
 }
 
@@ -18,6 +21,7 @@ function html () {
 
   return src('./assets/template.pug')
     .pipe(pug({ data: { resume, helper } }))
+    .pipe(replace(/class="(.*?)"/g, helper.applyCssPrefix(helper.CSS_PREFIX)))
     .pipe(dest('./public'))
 }
 
