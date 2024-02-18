@@ -25,6 +25,8 @@ li {
 
   a[href] {
     text-decoration: underline;
+    color: inherit;
+    font-weight: inherit;
   }
 }
 
