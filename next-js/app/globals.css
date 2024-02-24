@@ -9,17 +9,25 @@
   a:hover {
     @apply hover:text-primary;
   }
+}
 
+/* For remark-autolink-headings */
+.anchor-link {
+  visibility: hidden;
+  float: left;
+  line-height: 1;
+  padding-right: 0.25rem;
+  margin-left: -1.25rem;
+  fill: theme(colors.text.DEFAULT);
+}
+
+@media (prefers-color-scheme: dark) {
   .anchor-link {
-    visibility: hidden;
-    float: left;
-    line-height: 1;
-    padding-right: 0.25rem;
-    margin-left: 0.5rem;
-    fill: text;
+    fill: theme(colors.text.dark);
   }
+}
 
-  /* For remark-autolink-headings */
+@media screen(sm) {
   h1:hover .anchor-link,
   h2:hover .anchor-link,
   h3:hover .anchor-link,
@@ -27,5 +35,9 @@
   h5:hover .anchor-link,
   h6:hover .anchor-link {
     visibility: visible;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2rem; /* This needs to be variable! Needs to match line height of the heading next to it */
   }
 }
