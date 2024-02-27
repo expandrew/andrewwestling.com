@@ -23,6 +23,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ul: ({ children }) => <ul className="ps-10 list-revert">{children}</ul>,
     ol: ({ children }) => <ol className="ps-10 list-revert">{children}</ol>,
     p: ({ children }) => <p className="my-4">{children}</p>,
+    code: ({ children }) => (
+      <code className="bg-highlight dark:bg-highlight-dark text-primary rounded p-1">
+        {children}
+      </code>
+    ),
+    hr: () => <hr className="my-4" />,
     ...components,
   };
 }
