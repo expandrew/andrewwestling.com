@@ -35,7 +35,7 @@ const socialAccounts = [
 
 export const Footer = () => {
   return (
-    <footer className="no-print flex-0 leading-loose text-xs block bg-highlight dark:bg-highlight-dark py-8 mt-12">
+    <footer className="no-print flex-0 leading-loose text-sm block bg-highlight dark:bg-highlight-dark py-8 mt-12">
       <div className="max-w-container mx-auto w-full px-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           <div className="mb-3">
@@ -62,7 +62,7 @@ export const Footer = () => {
             {socialAccounts.map((account) => (
               <a
                 key={account.url}
-                className="flex flex-row items-center text-muted dark:text-muted-dark"
+                className="flex flex-row items-center text-muted dark:text-muted-dark w-fit"
                 href={account.url}
               >
                 <svg width={20} height={20} fill={"currentColor"}>

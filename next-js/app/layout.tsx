@@ -31,7 +31,7 @@ export default function App({ children }: { children: React.ReactNode }) {
           <Header />
           <main className="flex-1">
             <div className="max-w-container mx-auto w-full px-4">
-              <div className="mb-5">{children}</div>
+              {children}
             </div>
           </main>
           <Footer />
