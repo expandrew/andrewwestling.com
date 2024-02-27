@@ -1,6 +1,7 @@
 import createMDX from "@next/mdx";
 import autolinkHeadings from "remark-autolink-headings";
 import collapse from "remark-collapse";
+import gfm from "remark-gfm";
 import slug from "remark-slug";
 import toc from "remark-toc";
 
@@ -50,6 +51,7 @@ const nextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
+      gfm,
       [collapse, { test: "" }],
       slug,
       [autolinkHeadings, autoLinkHeadingsOptions],
