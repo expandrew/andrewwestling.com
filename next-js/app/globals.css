@@ -41,3 +41,9 @@
     height: 2rem; /* This needs to be variable! Needs to match line height of the heading next to it */
   }
 }
+
+/* To use with MDX components to revert list styles back to normal (Tailwind resets it) */
+ul.list-revert,
+ol.list-revert {
+  list-style: revert;
+}

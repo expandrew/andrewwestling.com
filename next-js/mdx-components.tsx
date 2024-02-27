@@ -20,8 +20,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: ({ children }) => (
       <h6 className="font-semibold text-lg my-6">{children}</h6>
     ),
-    ul: ({ children }) => <ul className="ps-10 my-4">{children}</ul>,
-    li: ({ children }) => <li className="list-disc">{children}</li>,
+    ul: ({ children }) => <ul className="ps-10 list-revert">{children}</ul>,
+    ol: ({ children }) => <ol className="ps-10 list-revert">{children}</ol>,
     p: ({ children }) => <p className="my-4">{children}</p>,
     ...components,
   };
