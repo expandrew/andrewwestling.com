@@ -42,6 +42,15 @@
   }
 }
 
+/* For Tidbyt gifs */
+.tidbyt-gif {
+  image-rendering: pixelated;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-image: url("/assets/projects/tidbyt/mask.png");
+  -webkit-mask-image: url("/assets/projects/tidbyt/mask.png");
+}
+
 /* To use with MDX components to revert list styles back to normal (Tailwind resets it) */
 ul.list-revert,
 ol.list-revert {
