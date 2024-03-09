@@ -1,5 +1,43 @@
 import type { Config } from "tailwindcss";
 
+export type AwdsColor = {
+  DEFAULT: string;
+  dark?: string;
+};
+
+export const awdsColors: {
+  [color: string]: AwdsColor;
+} = {
+  text: {
+    DEFAULT: "#050708",
+    dark: "#dddddd",
+  },
+  background: {
+    DEFAULT: "#ffffff",
+    dark: "#050708",
+  },
+  muted: {
+    DEFAULT: "#666666",
+    dark: "#898989",
+  },
+  highlight: {
+    DEFAULT: "#efefef",
+    dark: "#333333",
+  },
+  primary: {
+    DEFAULT: "#f1553a",
+  },
+  secondary: {
+    DEFAULT: "#1d93b2",
+  },
+  tertiary: {
+    DEFAULT: "#b8c05d",
+  },
+  accent: {
+    DEFAULT: "#fcbb1a",
+  },
+};
+
 const config: Config = {
   important: true,
   content: [
@@ -13,28 +51,7 @@ const config: Config = {
       fontFamily: {
         body: ["system-ui", "sans-serif"],
       },
-      colors: {
-        text: {
-          DEFAULT: "#050708",
-          dark: "#dddddd",
-        },
-        background: {
-          DEFAULT: "#ffffff",
-          dark: "#050708",
-        },
-        muted: {
-          DEFAULT: "#666666",
-          dark: "#898989",
-        },
-        highlight: {
-          DEFAULT: "#efefef",
-          dark: "#333333",
-        },
-        primary: "#f1553a",
-        secondary: "#1d93b2",
-        tertiary: "#b8c05d",
-        accent: "#fcbb1a",
-      },
+      colors: awdsColors,
       maxWidth: {
         container: "50rem",
       },

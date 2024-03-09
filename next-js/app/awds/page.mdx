@@ -1,0 +1,145 @@
+import { ComponentWrapper } from "./components/ComponentWrapper";
+import { Colors } from "./components/Colors";
+import { Footer } from "@components/Footer";
+import { Header } from "@components/Header";
+import { Greeting } from "@components/Greeting";
+import { Message } from "@components/Message";
+import { PhotoOfMe } from "@components/PhotoOfMe";
+import { Button } from "@components/Button";
+import { TidbytGif } from "@components/TidbytGif";
+import { PostedModified } from "@components/PostedModified";
+import NextLink from "next/link";
+
+export const metadata = { title: "AWDS" };
+
+export const messageContent = (
+  <>
+    <p className="mb-4">
+      "Andrew Westling Design System" -{" "}
+      <em>it's exactly what it says on the box</em>
+    </p>
+    <p>
+      This is just my kitchen sink for testing the local theme on this website.
+    </p>
+  </>
+);
+
+export const demoMessageContent = (
+  <>
+    <p className="mb-4">
+      This is a Message. I use it at the top of page to summarize what the page
+      is about.
+    </p>
+    <p className="mb-4">
+      Maybe it's just a response to a shortened attention span, but it's nice to
+      have a TL;DR sometimes.
+    </p>
+    <p>
+      Sometimes, these include links to external pages. To include an external
+      link, <NextLink href="/">do it like this</NextLink>.
+    </p>
+  </>
+);
+
+# AWDS
+
+<Message>{messageContent}</Message>
+
+---
+
+# Colors
+
+<Colors />
+
+---
+
+# Components
+
+- [Footer](#footer)
+- [Greeting](#greeting)
+- [Header](#header)
+- [Message](#message)
+- [PhotoOfMe](#photoofme)
+- [Buttons](#buttons)
+- [TidbytGif](#tidbytgif)
+- [PostedModified](#postedmodified)
+
+## Footer
+
+Global footer on this website.
+
+<ComponentWrapper>
+  <Footer />
+</ComponentWrapper>
+
+---
+
+## Greeting
+
+This is the banner at the top of my index page.
+
+<ComponentWrapper>
+  <Greeting />
+</ComponentWrapper>
+
+---
+
+## Header
+
+Global header on this website.
+
+<ComponentWrapper>
+  <Header />
+</ComponentWrapper>
+
+---
+
+## Message
+
+I use this block at the top of pages to give a TL;DR summary of what you're about to read.
+
+<ComponentWrapper>
+  <Message>{demoMessageContent}</Message>
+</ComponentWrapper>
+
+---
+
+## PhotoOfMe
+
+This is the photo of me on the index page, and the caption/attribution.
+
+<ComponentWrapper>
+  <PhotoOfMe />
+</ComponentWrapper>
+
+---
+
+## Buttons
+
+These are buttons, for use wherever a button is needed.
+
+<ComponentWrapper>
+  <div className="grid gap-1">
+    <Button>Primary button</Button>
+  </div>
+</ComponentWrapper>
+
+---
+
+## TidbytGif
+
+This is to display a Tidbyt preview gif with the nicer "rounded" appearance from Pixlet's UI.
+
+<ComponentWrapper>
+  <TidbytGif src={"/assets/projects/tidbyt/wnyc-name-and-image.gif"} />
+</ComponentWrapper>
+
+---
+
+## PostedModified
+
+This is the datestamp at the bottom of project pages.
+
+<ComponentWrapper>
+  <PostedModified posted="2021-01-23" modified="2024-02-26" />
+</ComponentWrapper>

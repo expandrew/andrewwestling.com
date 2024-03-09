@@ -28,7 +28,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </code>
     ),
-    hr: () => <hr className="my-4" />,
+    hr: () => <hr className="my-6" />,
     ...components,
   };
 }
