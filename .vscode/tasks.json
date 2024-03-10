@@ -24,7 +24,7 @@
       "problemMatcher": ["$tsc-watch"]
     },
     {
-      "command": "resume export --theme ./jsonresume-theme-andrewwestling ../next-js/app/components/resume.html && resume export --theme ./jsonresume-theme-andrewwestling ../next-js/public/assets/'Andrew Westling Resume'.pdf",
+      "command": "resume export --theme ./jsonresume-theme-andrewwestling ../next-js/app/resume/components/resume.html && resume export --theme ./jsonresume-theme-andrewwestling ../next-js/public/assets/'Andrew Westling Resume'.pdf",
       "detail": "Generate HTML resume and put it in public folder",
       "label": "Resume: Regenerate HTML and PDF",
       "type": "shell",
