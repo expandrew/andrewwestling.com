@@ -10,6 +10,7 @@
       "options": {
         "cwd": "next-js/"
       },
+      "dependsOn": ["Install"],
       "problemMatcher": ["$tsc-watch"]
     },
     {

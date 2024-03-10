@@ -1,6 +1,6 @@
 # andrewwestling.com with Next.js
 
-This is my static homepage rewritten with Next.js, TypeScript, MDX, and Tailwind.
+This is my static homepage written with Next.js, TypeScript, MDX, and Tailwind.
 
 ## Setup
 
@@ -11,9 +11,11 @@ npm install
 npm run dev
 ```
 
+I also have [VS Code Tasks](https://code.visualstudio.com/docs/editor/tasks) set up in this repo, so you can run the "Start" command and it should get everything up and running.
+
 ## Theme
 
-The "theme" is available in [`tailwind.config.ts`](tailwind.config.ts). It's not precious, and I change my mind sometimes. I basically just extended the base Tailwind theme with values in the same structure as my old Theme UI theme file from a prior iteration of this website.
+The "theme" is available in [`tailwind.config.ts`](tailwind.config.ts). It's not precious, and I change my mind sometimes.
 
 ## Deployment
 
