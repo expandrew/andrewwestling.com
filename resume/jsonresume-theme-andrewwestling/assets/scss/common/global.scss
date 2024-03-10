@@ -1,11 +1,5 @@
 @use "sass:color";
 
-a {
-  color: inherit;
-  font-weight: inherit;
-  text-decoration: none;
-}
-
 p,
 q {
   line-height: $line-height-1;
@@ -13,6 +7,7 @@ q {
 
 li {
   line-height: $line-height-2;
+  list-style: disc;
 
   &:first-child {
     margin-top: 0;
@@ -30,6 +25,8 @@ li {
 
   a[href] {
     text-decoration: underline;
+    color: inherit;
+    font-weight: inherit;
   }
 }
 

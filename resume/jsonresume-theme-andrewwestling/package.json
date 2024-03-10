@@ -22,6 +22,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "gulp-class-prefix": "^1.0.1",
+    "gulp-replace": "^1.1.4",
     "iso-3166-1": "^2.1.1",
     "markdown-it": "^13.0.1",
     "moment": "^2.29.3",

@@ -98,6 +98,16 @@ const beautifyLink = (string) => {
 
 const validArray = (array) => array !== undefined && array.length > 0
 
+const CSS_PREFIX = "aw-resume-";
+const applyCssPrefix = (prefix = CSS_PREFIX) => (_, classes) => {
+  const prefixedClasses = classes
+    .split(" ")
+    .map((className) => `${prefix}${className}`)
+    .join(" ");
+  return `class="${prefixedClasses}"`;
+};
+
+
 module.exports = {
   mdToHtml,
   calcLocation,
@@ -108,5 +118,7 @@ module.exports = {
   beautifyArray,
   arrayToPhrase,
   beautifyLink,
-  validArray
+  validArray,
+  CSS_PREFIX,
+  applyCssPrefix
 }

@@ -1,19 +1,21 @@
 # andrewwestling.com with Next.js
 
-This is my static homepage rewritten with Next.js, TypeScript, MDX, and Theme UI.
+This is my static homepage written with Next.js, TypeScript, MDX, and Tailwind.
 
 ## Setup
 
 To get up and running in development, run these inside this folder:
 
 ```
-yarn install
-yarn dev
+npm install
+npm run dev
 ```
+
+I also have [VS Code Tasks](https://code.visualstudio.com/docs/editor/tasks) set up in this repo, so you can run the "Start" command and it should get everything up and running.
 
 ## Theme
 
-The theme is available in [`theme.ts`](theme.ts). It's not precious, and I change my mind sometimes. I tried to keep color contrasts and font sizes accessible enough, but it's not scientific.
+The "theme" is available in [`tailwind.config.ts`](tailwind.config.ts). It's not precious, and I change my mind sometimes.
 
 ## Deployment
 
@@ -24,5 +26,7 @@ I'm using Vercel to deploy this. I just followed their instructions. I'm using t
 This repo was bootstrapped from this:
 
 ```bash
-npx create-next-app --example with-mdx with-mdx-app
+npx create-next-app@latest
 ```
+
+I added MDX by following [these instructions](https://nextjs.org/docs/app/building-your-application/configuring/mdx).

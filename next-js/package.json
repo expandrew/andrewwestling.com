@@ -1,36 +1,37 @@
 {
   "name": "andrewwestling-com",
-  "version": "1.0.1",
+  "version": "2.0.0",
+  "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.5.1",
-    "@mdx-js/react": "^1.6.18",
-    "@next/mdx": "^9.1.1",
-    "@types/theme-ui": "^0.3.7",
-    "html-loader": "^4.2.0",
-    "next": "12.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "remark-autolink-headings": "^6.0.1",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.0",
+    "@types/mdx": "^2.0.11",
+    "html-loader": "^5.0.0",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark-autolink-headings": "^7.0.1",
     "remark-collapse": "^0.1.2",
-    "remark-slug": "^6.0.0",
-    "remark-toc": "^7.2.0",
-    "theme-ui": "^0.6.1"
+    "remark-gfm": "^4.0.0",
+    "remark-slug": "^7.0.1",
+    "remark-toc": "^9.0.0"
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "license": "MIT",
   "devDependencies": {
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "typescript": "^4.3.2"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
